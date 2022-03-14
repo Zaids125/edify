@@ -1,0 +1,100 @@
+.Signup{
+    height: 100vh; 
+    width: 100vw;
+    display: flex;
+    /* background: rgba(241, 241, 241, 0.25);
+    backdrop-filter: blur(20px); */
+    
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.page-container{
+    height: 800px;
+    height: auto;
+    background-color: #ffffff;
+    padding: 50px;
+    border: 1px solid rgba(58, 90, 255, 0.5);
+    border-radius: 24px;
+
+}
+
+.FirstName, .LastName, .Email, .Password{
+    border: 1px solid #3A5AFF;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: rotate(0.33deg);
+    height: 56px;
+    width: 256px;
+    background: transparent;
+    outline: none;
+    padding: 0 15px;
+    font-family:  Helvetica;
+    font-style: normal;
+    font-weight: 275;
+    font-size: 18px;
+    line-height: 42px;
+}
+
+.Email , .Password{
+    width: 536px;
+}
+
+.sub-btn{
+    background: #FFC43B;
+    border-radius: 4px;
+    box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.6);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    color: white;
+    padding: 20px 0;
+    width: 536px;
+}
+
+.name{
+    display: flex;
+    padding: 20px 0 20px 0;
+
+}
+
+.text{
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 40px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.text > a {
+    color:#3A5AFF;
+    text-decoration: none;
+}
+
+h2{
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+/* 
+.FirstName > ::placeholder{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 275;
+font-size: 28px;
+line-height: 42px;
+/* identical to box height 
+padding: 100px;
+display: flex;
+text-align: center;
+} */

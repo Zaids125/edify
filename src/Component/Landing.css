@@ -1,0 +1,166 @@
+.landing-body{
+    background-color: white;
+}
+
+.logo{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logoImg{
+    height: 45px;
+    width: 45px;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.logotxt{
+    font-family: Vibur;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 72px;
+    margin: 0%;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.Actions{
+    padding-right   : 40px;
+    /* justify-content: right; */
+
+}
+
+
+
+.section-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px;
+}
+
+.section-1 >img {
+    /* padding-left: 80px; */
+    width: 494.45px;
+    height: 436.15px;   
+    justify-content: right;
+}
+
+.caption{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.head{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 74px;
+    line-height: 100px;
+    color: #2F281E;
+}
+
+.btn{
+    background: #FFC43B;
+    border-radius: 4px;
+    box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.6);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    padding: 16px 32px;
+    margin-top: 32px;
+    color: white;
+}
+
+.section-2{
+    background-color:#f2f2f2;
+}
+
+.section-2 > p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    padding: 24px;
+    text-align: center;
+    color: #2F281E;
+}
+
+.card > img{
+    width: 50px;
+    height: 50px;
+}
+
+.card > h3{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    padding: 24px 0px 8px 0px;
+    
+}
+
+.card > p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.card{
+    padding: 10px;
+    width: 200px;
+}
+
+
+.row-cards{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 32px;
+}
+
+
+.signup-btn{
+    background: #FFC43B;
+    border-radius: 4px;
+    box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.6);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    padding: 16px 32px;
+    margin: 16px;
+    color: white;
+}
+
+
+.login-btn{
+    text-decoration: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #979797;
+    color:#979797;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 16px 32px;
+    background: transparent;
+}
