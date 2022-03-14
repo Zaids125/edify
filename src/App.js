@@ -4,7 +4,6 @@ import Landing from "./Component/Landing";
 import Lesson from './Component/Lesson';
 import Navbar from './Component/Navbar';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { SidebarData } from './Component/SidebarData';
 // import Sidebar from './Component/Navbar';
 
 function App() {
@@ -17,11 +16,9 @@ function App() {
           <Router>
             <div>
               <Routes>
-                <Router path='/' component={<Landing/>}/>
-                <Route path='courses' component={<Lesson/>}/>
+                <Router path='/' element={<Landing/>}/>
+                <Route path='courses' element={<Lesson/>}/>
               </Routes>
-              {/* <Lesson/> */}
-
             </div>
           </Router>
         </div>
