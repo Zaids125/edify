@@ -17,32 +17,6 @@ function Landing() {
   const [isLogOpen, setisLogOpen] = useState(false);
   return (
     <div className={classes.landingBody}>
-      <nav className={classes.navContainer}>
-        <div className={classes.logo}>
-          <img
-            src={logo}
-            alt=""
-            className={classes.logoImg}
-            height="20px"
-            width="20px"
-          />
-          <p className={classes.logotxt}>Edify</p>
-        </div>
-        <div className={classes.Actions}>
-          <button
-            onClick={() => setisSignOpen(true)}
-            className={classes.signupBtn}
-          >
-            Sign up
-          </button>
-          <button
-            onClick={() => setisLogOpen(true)}
-            className={classes.loginBtn}
-          >
-            Log in
-          </button>
-        </div>
-      </nav>
       <Modal open={isSignOpen} onClose={() => setisSignOpen(false)}>
         <Signup />
       </Modal>
