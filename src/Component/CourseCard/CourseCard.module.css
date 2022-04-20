@@ -1,0 +1,61 @@
+.CourseCard {
+    background: #fff;
+    box-shadow: 0px 4px 20px rgba(48, 48, 48, 0.08);
+    border-radius: 12px;
+    width: 274px;
+    height: 286px;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.CourseCard:hover {
+
+}
+
+.CourseCardContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.CourseCardName {
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: .75px;
+    padding: 0 16px;
+}
+
+.CourseDetails{
+    display: flex;
+    justify-content: space-around;
+}
+
+.CourseDetails div {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+}
+.CourseDuration {
+    width: 66px;
+}
+.CourseAssgn {
+    width: 92px;
+}
+.CourseUnits {
+    width: 59px;
+}
+
+.EnrollBtn {
+    color: #000 !important;
+    height: 32px;
+    background-color: rgba(38, 44, 91, 0.2) !important;
+    border-radius: 0 0 12px 12px !important;
+
+}
