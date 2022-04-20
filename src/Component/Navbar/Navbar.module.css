@@ -22,6 +22,10 @@
     justify-self: flex-end;
 }
 
+.NavbarRightLogged {
+    width: 12.5%;
+}
+
 .NavbarLogo {
     height: 47px;
     margin: auto 0;

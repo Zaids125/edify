@@ -64,7 +64,7 @@ function Landing() {
         </div>
       </div>
       <div className={classes.section3}>
-        <p>Treding Courses</p>
+        <p>Trending Courses</p>
         <div className={classes.TredingCourseCards}>
           <CourseCard />
           <CourseCard />
