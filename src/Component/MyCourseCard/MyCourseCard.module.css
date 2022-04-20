@@ -1,0 +1,111 @@
+.MyCourseCard {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1166px;
+    height: 214px;
+    filter: drop-shadow(0px 4px 20px rgba(48, 48, 48, 0.08));
+    background: #FFFFFF;
+    border: 0.7px solid rgba(228, 228, 228, 0.5);
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin-top: 24px;
+}
+
+.MyCourseCardContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.side{
+    width: 22px;
+    height: 214px;
+    background: rgba(88, 1, 103, 0.1);
+    border-radius: 20px 0px 0px 20px;
+    margin-right: 16px;
+}
+
+.MyCourseCardLeft {
+    width: 50%;
+    display: flex;
+    padding: 24px 0;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}
+
+.timeDetails {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 253px;
+    margin-top: 8px;
+}
+
+.timeDetails > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+.completionDetails {
+    margin-top: 33px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #565656;
+}
+
+.viewDetails {
+    margin-top: 18px;
+    display: flex;
+    width: 25%;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    color: #565656;
+}
+
+.MyCourseCardRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.CourseTags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CourseTags > p {
+    background: #E2E8F0;
+    border-radius: 12px;
+    padding: 3px 11px;
+    margin-right: 2px;
+    margin-top: 8px;
+}
+
+.verticalSeparator {
+    height: 134px;
+    width: 2px;
+    background: #E6E6E6;
+    margin-right: 24px;
+    align-self: center;
+}
+
+.details {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 16px;
+}

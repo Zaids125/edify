@@ -1,0 +1,44 @@
+.MyCourses {
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 78px);
+}
+
+.MyCoursesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.CourseType {
+    display: flex;
+    width: 206px;
+    height: 40px;
+    margin-top: 25px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.CourseType > p {
+    cursor: pointer;
+}
+
+.CourseTypeActive {
+    color: #989898;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.CourseType div {
+    height: 24px;
+    width: 1px;
+    background-color: #000;
+}

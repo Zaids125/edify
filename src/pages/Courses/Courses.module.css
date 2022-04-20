@@ -1,6 +1,7 @@
 .Courses {
     display: flex;
     background-color: #fff;
+    min-height: calc(100vh - 78px);
 }
 
 .CourseSearchBar {
