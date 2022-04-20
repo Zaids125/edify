@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import classes from "./SideBar.css";
 import { IconContext } from "react-icons";
-import LogoFull from "../Imgs/logofull.png";
+import LogoFull from "../../Imgs/logofull.png";
 import { Button } from "@mui/material";
 
 function SideBar() {
