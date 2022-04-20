@@ -75,6 +75,10 @@
     color: #565656;
 }
 
+.viewDetails:active {
+    color: #000;
+}
+
 .MyCourseCardRight {
     width: 50%;
     display: flex;

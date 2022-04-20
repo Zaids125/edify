@@ -31,7 +31,7 @@
   align-items: center;
   /* padding: 8px 0px 8px 16px; */
   list-style: none;
-  height: 60px;
+  height: 50px;
   /* padding: 32px 0 0 0 ; */
 }
 
@@ -63,9 +63,8 @@
 
 } 
 
-.link:hover .icon,.link:hover .title  {
-  background-color: #1a83ff;
-  color: #fff !important;
+.link:hover {
+  background: #EFF2F6;
 }
 
 .navMenuItems {
