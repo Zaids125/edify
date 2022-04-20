@@ -1,0 +1,47 @@
+.Navbar {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: 78px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+}
+
+.NavbarLeft {
+    height: 100%;
+    width: 30%;
+    display: flex;
+}
+
+.NavbarRight {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    justify-self: flex-end;
+}
+
+.NavbarLogo {
+    height: 47px;
+    margin: auto 0;
+    padding: 0 24px;
+}
+
+.btn {
+    height: 44px;
+    width: 110px;
+    background: #fff;
+    border-radius: 4px;
+    margin: auto 0 !important;
+    color: #262C5B !important;
+    border: 1px solid #262C5B !important;
+    text-transform: none !important;
+}
+
+.btnColored {
+    background: #262C5B !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.6);
+}

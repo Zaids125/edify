@@ -1,23 +1,23 @@
 .navbar {
-    background-color: none;
+    background: #F8F9FA;;
     height: 80px;
     display: flex;
     justify-content: start;
     align-items: center;
   }
   
-  .menu-bars {
+  .menuBars {
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
   }
   
 img{
-  padding: 32px 0 0 16px;
+  /* padding: 32px 0 0 16px; */
 }
 
-  .nav-menu {
-    background-color: none;
+  .navMenu {
+    background: #F8F9FA;
     width: 215px;
     height: auto;
     display: flex;
@@ -31,7 +31,7 @@ img{
   
 
   
-  .nav-text {
+  .navText {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -41,9 +41,10 @@ img{
     /* padding: 32px 0 0 0 ; */
   }
   
-  .nav-text a {
+  
+  .navText a {
     text-decoration: none;
-    color: #f5f5f5;
+    color: #565656;
     font-size: 18px;
     width: 95%;
     height: 100%;
@@ -53,15 +54,27 @@ img{
     border-radius: 4px;
   }
   
-  .nav-text .active{
+  .navText div {
+    width: 30px;
+    height: 30px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navText .active{
 
   } 
 
-  .nav-text a:hover {
+  .navText a:hover {
     background-color: #1a83ff;
   }
   
-  .nav-menu-items {
+  .navMenu-items {
     width: 100%;
     padding: 0px;
   }
