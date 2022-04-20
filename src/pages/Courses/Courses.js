@@ -27,7 +27,7 @@ function Courses() {
           />
           <div className={classes.SearchButtonContainer}>
             <Button className={classes.SearchButton}>
-              <BiSearchAlt style={{ fontSize: 16 }} /> <p>Search</p>
+              <BiSearchAlt style={{ fontSize: 18 }} /> <p>Search</p>
             </Button>
           </div>
         </div>

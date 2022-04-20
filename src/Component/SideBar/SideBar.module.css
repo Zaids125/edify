@@ -63,8 +63,9 @@
 
 } 
 
-.link:hover {
+.link:hover .icon,.link:hover .title  {
   background-color: #1a83ff;
+  color: #fff !important;
 }
 
 .navMenuItems {

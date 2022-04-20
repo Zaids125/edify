@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./CourseCard.module.css";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { BsTerminalFill } from "react-icons/bs";
+import { MdVideoLibrary } from "react-icons/md";
 import { Button } from "@mui/material";
 import courseImg from "../../Imgs/courseCardImg.png";
 
@@ -21,7 +22,7 @@ function CourseCard() {
             <p>4 Assignments</p>
           </div>
           <div className={classes.CourseUnits}>
-            <></>
+            <MdVideoLibrary />
             <p>16 Units</p>
           </div>
         </div>
