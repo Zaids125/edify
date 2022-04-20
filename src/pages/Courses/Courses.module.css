@@ -5,6 +5,8 @@
 
 .CourseSearchBar {
     margin: 20px;
+    position: relative;
+    width: fit-content;
 }
 
 .CourseSearchInput {
@@ -17,6 +19,34 @@
     font-size: 14px;
     padding-left: 16px;
     font-family: 'Inter';
+}
+
+.SearchButtonContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 100px;
+}
+
+.SearchButton {
+    width: 139px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 14px;
+    color: #000;
+    font-weight: 800;
+}
+
+.SearchButton:active {
+    border-radius: 100px !important;
 }
 
 .AllCourseCards {

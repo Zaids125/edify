@@ -1,13 +1,19 @@
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, Button, TextField } from "@mui/material";
 import React from "react";
 import CourseCard from "../../Component/CourseCard/CourseCard";
 import SideBar from "../../Component/SideBar/SideBar";
 import classes from "./Courses.module.css";
+import { BiSearchAlt } from "react-icons/bi";
 
 function Courses() {
   return (
     <div className={classes.Courses}>
-      <div className={classes.Sidebar}>
+      <div
+        className={classes.Sidebar}
+        style={{
+          background: "#F8F9FA",
+        }}
+      >
         <SideBar />
       </div>
       <div className={classes.CoursesContainer}>
@@ -19,6 +25,11 @@ function Courses() {
             label=""
             InputLabelProps={{ shrink: false }}
           />
+          <div className={classes.SearchButtonContainer}>
+            <Button className={classes.SearchButton}>
+              <BiSearchAlt style={{ fontSize: 16 }} /> <p>Search</p>
+            </Button>
+          </div>
         </div>
         <div className={classes.AllCourseCards}>
           <CourseCard />
