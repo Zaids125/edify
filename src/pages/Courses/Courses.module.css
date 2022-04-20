@@ -1,0 +1,25 @@
+.Courses {
+    display: flex;
+    background-color: #fff;
+}
+
+.CourseSearchBar {
+    margin: 20px;
+}
+
+.CourseSearchInput {
+    height: 40px;
+    width: 874px;
+    outline: none;
+    background: #E4E4E4;
+    border-radius: 100px;
+    border: none;
+    font-size: 14px;
+    padding-left: 16px;
+    font-family: 'Inter';
+}
+
+.AllCourseCards {
+    display: flex;
+    flex-wrap: wrap;
+}

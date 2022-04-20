@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
-import classes from "./SideBar.css";
+import classes from "./SideBar.module.css";
 import { IconContext } from "react-icons";
 import LogoFull from "../../Imgs/logofull.png";
 import { Button } from "@mui/material";
@@ -13,25 +13,20 @@ function SideBar() {
   // const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <>
-      <IconContext.Provider value={{ color: "#fff" }}>
-        {/* <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}> */}
-        <nav className={classes.navMenu}>
-          <ul className={classes.navMenu_Items}>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    <div>{item.icon}</div>
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
-    </>
+    <nav className={classes.navMenu}>
+      <ul className={classes.navMenuItems}>
+        {SidebarData.map((item, index) => {
+          return (
+            <li key={index} className={classes.navText}>
+              <Link className={classes.link} to={item.path}>
+                <div className={classes.icon}>{item.icon}</div>
+                <span className={classes.title}>{item.title}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
 

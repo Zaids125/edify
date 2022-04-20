@@ -4,6 +4,7 @@
     border-radius: 12px;
     width: 274px;
     height: 286px;
+    margin: 20px;
     font-family: 'Inter';
     display: flex;
     flex-direction: column;
