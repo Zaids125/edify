@@ -37,6 +37,8 @@ function Course() {
             <UnitBox />
             <UnitBox />
             <UnitBox />
+            <UnitBox />
+            <UnitBox />
           </div>
           <div className={classes.CourseTime}>
             <CourseTime />
