@@ -4,7 +4,8 @@ import SideBar from "../../Component/SideBar/SideBar";
 import classes from "./MyCourses.module.css";
 
 function MyCourses() {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
+
   return (
     <div className={classes.MyCourses}>
       <div
@@ -18,14 +19,14 @@ function MyCourses() {
       <div className={classes.MyCoursesContainer}>
         <div className={classes.CourseType}>
           <p
-            onClick={() => setActive((state) => !state)}
+            onClick={() => setActive(true)}
             className={active ? classes.CourseTypeActive : ""}
           >
             Active
           </p>
           <div></div>
           <p
-            onClick={() => setActive((state) => !state)}
+            onClick={() => setActive(false)}
             className={!active ? classes.CourseTypeActive : ""}
           >
             Completed
