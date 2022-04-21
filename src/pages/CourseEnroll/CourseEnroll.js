@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Course.module.css";
+import classes from "./CourseEnroll.module.css";
 import SideBar from "../../Component/SideBar/SideBar";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import CourseCard1 from "../../Component/CourseCard1/CourseCard1";
