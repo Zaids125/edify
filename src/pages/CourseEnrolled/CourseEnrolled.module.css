@@ -1,4 +1,4 @@
-.Course {
+.CourseEnrolled {
     display: flex;
     width: 100%;
     background-color: #fff;
@@ -15,7 +15,6 @@
     margin: 10px;
     cursor: pointer;
     color: #989898;
-    text-decoration: none;
 }
 
 .backBtn > div {

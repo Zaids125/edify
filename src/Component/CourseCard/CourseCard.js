@@ -5,8 +5,10 @@ import { BsTerminalFill } from "react-icons/bs";
 import { MdVideoLibrary } from "react-icons/md";
 import { Button } from "@mui/material";
 import courseImg from "../../Imgs/courseCardImg.png";
+import { useHistory } from "react-router-dom";
 
 function CourseCard() {
+  const history = useHistory();
   return (
     <div className={classes.CourseCard}>
       <div className={classes.CourseCardContainer}>
@@ -26,7 +28,12 @@ function CourseCard() {
             <p>16 Units</p>
           </div>
         </div>
-        <Button className={classes.EnrollBtn}>Enroll Now</Button>
+        <Button
+          onClick={() => window.open("http://localhost:3000/courses/abc")}
+          className={classes.EnrollBtn}
+        >
+          Enroll Now
+        </Button>
       </div>
     </div>
   );

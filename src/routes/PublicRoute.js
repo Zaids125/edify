@@ -5,6 +5,7 @@ import Landing from "../pages/Landing/Landing";
 import Sidebar from "../Component/SideBar/SideBar";
 import MyCourses from "../pages/MyCourses/MyCourses";
 import CourseEnroll from "../pages/CourseEnroll/CourseEnroll";
+import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 
 const PublicRoutes = () => (
   <Switch>
@@ -16,6 +17,9 @@ const PublicRoutes = () => (
     </Route>
     <Route path="/my-courses" exact>
       <MyCourses />
+    </Route>
+    <Route path="/my-courses/:id" exact>
+      <CourseEnrolled />
     </Route>
     <Route path="/" exact>
       <Landing />

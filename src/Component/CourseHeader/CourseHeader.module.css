@@ -1,0 +1,64 @@
+.CourseHeader {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    background-color: #fff;
+}
+
+.CourseHeaderContainer {
+    width: 100%;
+    display: flex;
+    padding: 0 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 0;
+}
+
+.CoursePercent {
+    width: 12%;
+}
+
+.CourseTitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    width: 52%;
+}
+
+.CourseTime {
+    display: flex;
+    justify-self: flex-end;
+    width: 20%;
+    justify-content: space-between;
+    color: #989898;
+}
+
+.CourseTime > div {
+    width: 58px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.backBtn {
+    display: flex;
+    align-items: center;
+    width: 5%;
+    margin: 10px;
+    cursor: pointer;
+    color: #989898;
+    text-decoration: none;
+}
+
+.backBtn > div {
+    margin: 0 2px;
+}
+
+.backBtn svg {
+    vertical-align: middle;
+}
+
+.backBtn:active {
+    color: #000;
+}

@@ -1,0 +1,57 @@
+.CourseSideBar {
+    width: 336px;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.HeaderContainer, .TopicTitle {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.SideBarHeader {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    color: #262C5B;
+}
+
+.HeaderData {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #989898;
+}
+
+.TopicContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 9px 0;
+}
+
+.Topic {
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    width: 236px;
+    line-height: 20px;
+    color: #000000;
+    align-items: center;
+}
+
+.Topic svg {
+    margin-right: 10px;
+}
+
+.TopicTime {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #989898;
+}

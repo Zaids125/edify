@@ -6,6 +6,7 @@ import CourseCard1 from "../../Component/CourseCard1/CourseCard1";
 import courseCardImg from "../../Imgs/courseCardImg1.png";
 import UnitBox from "../../Component/UnitBox/UnitBox";
 import CourseTime from "../../Component/CourseTime/CourseTime";
+import { Link } from "react-router-dom";
 
 function Course() {
   // const courseName
@@ -21,12 +22,12 @@ function Course() {
         <SideBar />
       </div>
       <div className={classes.CourseContainer}>
-        <div className={classes.backBtn}>
+        <Link to="/courses" className={classes.backBtn}>
           <div>
             <MdOutlineKeyboardBackspace />
           </div>
           <p>Back</p>
-        </div>
+        </Link>
         <div className={classes.line}></div>
         <div className={classes.CourseHeader}>
           <CourseCard1 />
