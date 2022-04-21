@@ -1,0 +1,49 @@
+.UnitBox {
+    width: 762px;
+    border-bottom: 1px solid #E4E4E4;
+}
+.UnitBoxContainer {
+    width: 100%;
+}
+
+.UnitHeader {
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #000000;
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.UnitChapters {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+}
+
+.UnitChapter {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.UnitName {
+    display: flex;
+}
+
+.UnitName > p {
+    margin: 0 4px;
+}
