@@ -1,0 +1,91 @@
+.Portfolio {
+    min-height: calc(100vh - 78px);
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+}
+
+.PortfolioContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.HeaderContainer {
+    width: 55%;
+    display: flex;
+}
+
+.HeaderContainer h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+    color: #121843;
+}
+
+.TwoInputs {
+    display: flex;
+    width: 100% !important;
+}
+
+.TwoInputs, .OneInput {
+    margin-top: 15px;
+}
+
+.TwoInputs div, .TwoInputs input {
+    width: 340px !important;
+}
+
+.TwoInputs div:first-child  {
+    margin-right: 40px;
+}
+
+.OneInput, .OneInput div {
+    width: 720px;
+}
+
+.TwoInputs input::placeholder, .OneInput input::placeholder {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: 1px !important;
+}
+
+.OneInput input {
+    width: 720px !important;
+}
+
+.TwoInputs p, .OneInput p {
+    color: #262C5B;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 1px;
+}
+
+.EducationInput {
+}
+
+.EducationBtn {
+    margin-top: 10px !important;
+    background: #262C5B !important;
+    border: 1px solid #262C5B !important;
+    box-sizing: border-box !important;
+    border-radius: 4px !important;
+    color: #fff !important;
+    width: 100% !important;
+}
+
+.SaveBtn {
+    margin-top: 30px;
+    width: 176px;
+    height: 52px;
+    background: linear-gradient(259.04deg, #F53939 4.27%, #FF6F1E 23.72%, #FFC939 99.98%);
+    border-radius: 100px;
+    color: #000;
+    font-weight: 700;
+}

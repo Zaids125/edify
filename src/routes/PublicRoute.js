@@ -9,6 +9,7 @@ import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
+import Portfolio from "../pages/Portfolio/Portfolio";
 
 const PublicRoutes = () => (
   <Switch>
@@ -26,6 +27,9 @@ const PublicRoutes = () => (
     </Route>
     <Route path="/my-courses/:id/assignment1" exact>
       <CourseEnrolled />
+    </Route>
+    <Route path="/portfolio">
+      <Portfolio />
     </Route>
     <Route path="/signup">
       <Signup />

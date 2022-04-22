@@ -68,6 +68,9 @@
     width: 228px !important;
 }
 
+.NameContainer p, .EmailContainer p, .PasswordContainer p {
+    color: #262C5B;
+}
 
 .PasswordContainer {
     display: flex;

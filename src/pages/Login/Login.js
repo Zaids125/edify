@@ -51,12 +51,7 @@ function Login() {
           <img className={classes.Auth} src={Auth} alt="Auth" />
           <img className={classes.Logo} src={Logo} alt="Logo" />
         </div>
-        <FormControl
-          className={classes.LoginRight}
-          variant="standard"
-          fullWidth
-          sx={{ m: 1 }}
-        >
+        <form className={classes.LoginRight}>
           <h1>Welcome back</h1>
           <Box className={classes.EmailContainer}>
             <p>Email Address</p>
@@ -102,7 +97,7 @@ function Login() {
           <p className={classes.NewMember}>
             New member? <Link to="/signup">Sign up</Link>
           </p>
-        </FormControl>
+        </form>
       </div>
     </div>
   );
