@@ -11,27 +11,34 @@ import Modal from "../../Component/Modal";
 import Signup from "../../Component/Signup/Signup";
 import Login from "../../Component/Login/Login";
 import CourseCard from "../../Component/CourseCard/CourseCard";
+import { useHistory } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function Landing() {
   const [isSignOpen, setisSignOpen] = useState(false);
   const [isLogOpen, setisLogOpen] = useState(false);
+  const history = useHistory();
+
   return (
     <div className={classes.landingBody}>
-      <Modal open={isSignOpen} onClose={() => setisSignOpen(false)}>
+      {/* <Modal open={isSignOpen} onClose={() => setisSignOpen(false)}>
         <Signup />
       </Modal>
       <Modal open={isLogOpen} onClose={() => setisLogOpen(false)}>
         <Login />
-      </Modal>
+      </Modal> */}
       <div className={classes.section1}>
         <div className={classes.texts}>
           <p className={classes.head}>Make learning fun!!</p>
           <p className={classes.caption}>
             Any language, on any device, for all ages!
           </p>
-          <button onClick={() => setisSignOpen(true)} className={classes.btn}>
+          <Button
+            onClick={() => history.push("/signup")}
+            className={classes.btn}
+          >
             Sign up for free
-          </button>
+          </Button>
         </div>
         <img src={illust1} alt="hello" />
       </div>

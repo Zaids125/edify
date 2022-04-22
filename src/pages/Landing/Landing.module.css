@@ -70,17 +70,17 @@
 }
 
 .btn{
-    background: #FFC43B;
-    border-radius: 4px;
+    background: #FFC43B !important;
+    border-radius: 4px  !important;
     box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.6);
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    border: none;
-    padding: 16px 32px;
-    margin-top: 32px;
-    color: white;
+    font-weight: 600  !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    border: none !important;
+    padding: 16px 32px !important;
+    margin-top: 32px !important;
+    color: white !important;
 }
 
 .section2{

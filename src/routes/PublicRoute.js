@@ -8,6 +8,7 @@ import CourseEnroll from "../pages/CourseEnroll/CourseEnroll";
 import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 const PublicRoutes = () => (
   <Switch>
@@ -28,6 +29,9 @@ const PublicRoutes = () => (
     </Route>
     <Route path="/login">
       <Login />
+    </Route>
+    <Route path="/forgotpassword">
+      <ForgotPassword />
     </Route>
     <Route path="/" exact>
       <Landing />

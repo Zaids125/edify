@@ -27,7 +27,10 @@ function Login() {
 
   const onChangeHandler = (e) => {
     if (e.target.name === "email") {
-      if (password && (emailValidator("") || phoneValidator(e.target.value))) {
+      if (
+        password &&
+        (emailValidator(e.target.value) || phoneValidator(e.target.value))
+      ) {
         setDisable(false);
       } else setDisable(true);
 

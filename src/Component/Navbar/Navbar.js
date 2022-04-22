@@ -3,9 +3,11 @@ import classes from "./Navbar.module.css";
 import logo from "../../Imgs/Logo.svg";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Navbar() {
   const [user, setUser] = useState(true);
+  const history = useHistory();
 
   return (
     <div className={classes.Navbar}>
@@ -23,10 +25,18 @@ function Navbar() {
       >
         {user ? (
           <>
-            <Button className={`${classes.btnColored} ${classes.btn}`}>
+            <Button
+              onClick={() => history.push("/signup")}
+              className={`${classes.btnColored} ${classes.btn}`}
+            >
               Sign Up
             </Button>
-            <Button className={classes.btn}>Log in</Button>
+            <Button
+              onClick={() => history.push("/login")}
+              className={classes.btn}
+            >
+              Log in
+            </Button>
           </>
         ) : (
           <Button className={classes.btn}>Log out</Button>
