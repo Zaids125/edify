@@ -1,8 +1,9 @@
-import { Button, Input } from "@mui/material";
+import { Button, IconButton, Input, InputAdornment } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import SideBar from "../../Component/SideBar/SideBar";
 import classes from "./Portfolio.module.css";
+import { BsPlusSquareFill } from "react-icons/bs";
 
 function Portfolio() {
   return (
@@ -122,10 +123,17 @@ function Portfolio() {
                 id="internship"
                 type="text"
                 name="internship"
-                sx={{ width: 220, marginRight: 5 }}
+                sx={{ width: 720, marginRight: 5 }}
                 className={classes.Name}
                 // onChange={onChangeHandler}
                 placeholder="Enter your past internships"
+                // endAdornment={
+                //   <InputAdornment position="end">
+                //     <IconButton>
+                //       <BsPlusSquareFill />
+                //     </IconButton>
+                //   </InputAdornment>
+                // }
               />
             </div>
           </Box>
@@ -136,7 +144,7 @@ function Portfolio() {
                 id="courses"
                 type="text"
                 name="courses"
-                sx={{ width: 220, marginRight: 5 }}
+                sx={{ width: 720, marginRight: 5 }}
                 className={classes.Name}
                 // onChange={onChangeHandler}
                 placeholder="Add you courses and certifications"
@@ -150,7 +158,7 @@ function Portfolio() {
                 id="skills"
                 type="text"
                 name="skills"
-                sx={{ width: 220, marginRight: 5 }}
+                sx={{ width: 720, marginRight: 5 }}
                 className={classes.Name}
                 // onChange={onChangeHandler}
                 placeholder="Add your skills"
@@ -164,7 +172,7 @@ function Portfolio() {
                 id="projects"
                 type="text"
                 name="projects"
-                sx={{ width: 220, marginRight: 5 }}
+                sx={{ width: 720, marginRight: 5 }}
                 className={classes.Name}
                 // onChange={onChangeHandler}
                 placeholder="Add your academia or personal projects"
@@ -178,7 +186,7 @@ function Portfolio() {
                 id="otherDetails"
                 type="text"
                 name="otherDetails"
-                sx={{ width: 220, marginRight: 5 }}
+                sx={{ width: 720, marginRight: 5 }}
                 className={classes.Name}
                 // onChange={onChangeHandler}
                 placeholder="Add you accomplishments or other details"
