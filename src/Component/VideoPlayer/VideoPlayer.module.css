@@ -1,0 +1,46 @@
+.VideoPlayer{
+    margin: 48px;
+}
+
+.CourseType {
+    display: flex;
+    width: 206px;
+    height: 40px;
+    margin-top: 25px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #989898;
+}
+
+.CourseType > p {
+    cursor: pointer;
+}
+
+.CourseTypeActive {
+    color: #000;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.CourseType div {
+    height: 24px;
+    width: 1px;
+    background-color: #000;
+}
+
+.Button{
+    background: linear-gradient(259.04deg, #F53939 4.27%, #FF6F1E 23.72%, #FFC939 99.98%);
+    border-radius: 100px;
+    padding: 16px 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+}
