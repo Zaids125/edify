@@ -1,0 +1,105 @@
+.Signup {
+    width: 100%;
+    min-height: calc(100vh - 78px);
+    background-color: #fff;
+}
+
+.SignupContainer {
+    width: 100%;
+    min-height: calc(100vh - 78px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignupLeft {
+    background-color: #000;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 78px);
+    position: relative;
+}
+
+.Logo {
+    width: 126px;
+    position: absolute;
+    left: 18%;
+    top: 20%;
+}
+
+.Auth {
+    width: 480px;
+    margin: 0 auto;
+}
+
+.SignupRight {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+    align-self: center;
+    margin: 0 auto !important;
+    /* width: 0% !important; */
+    height: 398px;
+}
+
+.SignupRight > h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.5px;
+}
+
+.Email, .Password, .FirstName, .LastName {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    width: 480px;
+}
+
+.NameContainer {
+    display: flex;
+    width: 30% !important;
+}
+
+.NameContainer input {
+    width: 228px !important;
+}
+
+
+.PasswordContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.SignupBtn {
+    height: 44px;
+    background: linear-gradient(259.04deg, #F53939 4.27%, #FF6F1E 23.72%, #FFC939 99.98%);
+    border-radius: 100px !important;
+    color: black !important;
+    font-family: 'Montserrat' !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    text-align: center !important;
+    letter-spacing: 1.25px !important;
+    text-transform: uppercase !important;
+}
+
+.SignupBtn:disabled {
+    background: #cbcbcb;
+    
+}
+
+.NewMember {
+    align-self: center;
+    color: #6D6D6D;
+}
+
+.NewMember a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+}

@@ -6,6 +6,8 @@ import Sidebar from "../Component/SideBar/SideBar";
 import MyCourses from "../pages/MyCourses/MyCourses";
 import CourseEnroll from "../pages/CourseEnroll/CourseEnroll";
 import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
+import Login from "../pages/Login/Login";
+import Signup from "../pages/Signup/Signup";
 
 const PublicRoutes = () => (
   <Switch>
@@ -20,6 +22,12 @@ const PublicRoutes = () => (
     </Route>
     <Route path="/my-courses/:id" exact>
       <CourseEnrolled />
+    </Route>
+    <Route path="/signup">
+      <Signup />
+    </Route>
+    <Route path="/login">
+      <Login />
     </Route>
     <Route path="/" exact>
       <Landing />
