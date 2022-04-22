@@ -13,8 +13,11 @@ function CourseEnrolled() {
     <div className={classes.CourseEnrolled}>
       <div className={classes.CourseContainer}>
         <CourseHeader />
-        <div className={classes.Sidebar}>
-          <CourseSideBar />
+        <div className={classes.abc}>
+          <div className={classes.Sidebar}>
+            <CourseSideBar />
+          </div>
+          <div>12345678</div>
         </div>
       </div>
     </div>

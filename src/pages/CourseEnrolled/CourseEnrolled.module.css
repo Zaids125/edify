@@ -34,6 +34,10 @@
     border-bottom: 1px solid #E4E4E4;
 }
 
+.abc {
+    display: flex;
+}
+
 .CourseHeader {
     display: flex;
     width: calc(100% - 50px);
