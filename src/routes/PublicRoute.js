@@ -24,6 +24,9 @@ const PublicRoutes = () => (
     <Route path="/my-courses/:id" exact>
       <CourseEnrolled />
     </Route>
+    <Route path="/my-courses/:id/assignment1" exact>
+      <CourseEnrolled />
+    </Route>
     <Route path="/signup">
       <Signup />
     </Route>
