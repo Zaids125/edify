@@ -8,13 +8,16 @@ import CourseTime from "../../Component/CourseTime/CourseTime";
 import CourseHeader from "../../Component/CourseHeader/CourseHeader";
 import CourseSideBar from "../../Component/CourseSideBar/CourseSideBar";
 
-function CourseEnrolled() {
+function CourseEnrolled({ children }) {
   return (
     <div className={classes.CourseEnrolled}>
       <div className={classes.CourseContainer}>
         <CourseHeader />
-        <div className={classes.Sidebar}>
-          <CourseSideBar />
+        <div className={classes.abc}>
+          <div className={classes.Sidebar}>
+            <CourseSideBar />
+          </div>
+          <div>{children}</div>
         </div>
       </div>
     </div>

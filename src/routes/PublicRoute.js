@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import Portfolio from "../pages/Portfolio/Portfolio";
+import Video from "../Component/VideoPlayer/VideoPlayer";
 
 const PublicRoutes = () => (
   <Switch>
@@ -26,7 +27,7 @@ const PublicRoutes = () => (
       <CourseEnrolled />
     </Route>
     <Route path="/my-courses/:id/assignment1" exact>
-      <CourseEnrolled />
+      <CourseEnrolled children={<Video />} />
     </Route>
     <Route path="/portfolio">
       <Portfolio />
