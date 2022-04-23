@@ -1,12 +1,4 @@
-import {
-  Button,
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Input,
-  Radio,
-  RadioGroup,
-} from "@mui/material";
+import { Button, Input } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import classes from "./Modals.module.css";
@@ -28,9 +20,9 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Profile</p>
           <Input
-            id="school"
+            id="profile"
             type="text"
-            name="school"
+            name="profile"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -42,9 +34,9 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Organization</p>
           <Input
-            id="school"
+            id="organization"
             type="text"
-            name="school"
+            name="organization"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -56,9 +48,9 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Location</p>
           <Input
-            id="school"
+            id="location"
             type="text"
-            name="school"
+            name="location"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -68,27 +60,27 @@ function Internships({ setOpen, setInternship }) {
       </Box>
       <Box className={classes.DialogTwoInputs}>
         <div>
-          <p style={{ fontSize: 12, color: "#262C5B" }}>Start Year</p>
+          <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
           <Input
-            id="startYear"
-            type="number"
-            name="startYear"
+            id="startDate"
+            type="date"
+            name="startDate"
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
-            placeholder="Enter Start Year"
+            placeholder="Enter Start Date"
           />
         </div>
         <div>
-          <p style={{ fontSize: 12, color: "#262C5B" }}>End Year</p>
+          <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
           <Input
-            id="endYear"
-            type="number"
-            name="endYear"
+            id="endDate"
+            type="date"
+            name="endDate"
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
-            placeholder="Enter End Year"
+            placeholder="Enter End Date"
           />
         </div>
       </Box>
@@ -98,9 +90,9 @@ function Internships({ setOpen, setInternship }) {
             Description (optional)
           </p>
           <Input
-            id="school"
+            id="description"
             type="text"
-            name="school"
+            name="description"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}

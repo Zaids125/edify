@@ -27,9 +27,9 @@ function Projects({ setOpen, setProjects }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Title</p>
           <Input
-            id="school"
+            id="title"
             type="text"
-            name="school"
+            name="title"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -69,9 +69,9 @@ function Projects({ setOpen, setProjects }) {
             Description (optional)
           </p>
           <Input
-            id="school"
+            id="description"
             type="text"
-            name="school"
+            name="description"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -85,9 +85,9 @@ function Projects({ setOpen, setProjects }) {
             Project link (optional)
           </p>
           <Input
-            id="school"
+            id="projectLink"
             type="text"
-            name="school"
+            name="projectLink"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}

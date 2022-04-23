@@ -28,9 +28,9 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Training program</p>
           <Input
-            id="school"
+            id="program"
             type="text"
-            name="school"
+            name="program"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -42,9 +42,9 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Organization</p>
           <Input
-            id="school"
+            id="organization"
             type="text"
-            name="school"
+            name="organization"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -56,9 +56,9 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Location</p>
           <Input
-            id="school"
+            id="location"
             type="text"
-            name="school"
+            name="location"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
@@ -68,27 +68,27 @@ function Certifications({ setOpen, setCertifications }) {
       </Box>
       <Box className={classes.DialogTwoInputs}>
         <div>
-          <p style={{ fontSize: 12, color: "#262C5B" }}>Start Year</p>
+          <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
           <Input
-            id="startYear"
-            type="number"
-            name="startYear"
+            id="startDate"
+            type="date"
+            name="startDate"
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
-            placeholder="Enter Start Year"
+            placeholder="Enter Start Date"
           />
         </div>
         <div>
-          <p style={{ fontSize: 12, color: "#262C5B" }}>End Year</p>
+          <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
           <Input
-            id="endYear"
-            type="number"
-            name="endYear"
+            id="endDate"
+            type="date"
+            name="endDate"
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
-            placeholder="Enter End Year"
+            placeholder="Enter End Date"
           />
         </div>
       </Box>
@@ -98,9 +98,9 @@ function Certifications({ setOpen, setCertifications }) {
             Description (optional)
           </p>
           <Input
-            id="school"
+            id="description"
             type="text"
-            name="school"
+            name="description"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}

@@ -30,9 +30,9 @@ function Accomplishments({ setOpen, setAccomplishments }) {
             Description (optional)
           </p>
           <Input
-            id="school"
+            id="description"
             type="text"
-            name="school"
+            name="description"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
             // onChange={onChangeHandler}
