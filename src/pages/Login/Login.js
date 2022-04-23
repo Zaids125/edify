@@ -17,6 +17,7 @@ import { Box } from "@mui/system";
 import { emailValidator, phoneValidator } from "../../utils/validators";
 import { useDispatch } from "react-redux";
 import { login } from "../../state/actions/auth";
+import { useHistory } from "react-router-dom";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -26,6 +27,8 @@ function Login() {
   const [email, setEmail] = useState("");
 
   const [disable, setDisable] = useState(true);
+
+  const history = useHistory();
 
   const onChangeHandler = (e) => {
     if (e.target.name === "email") {
@@ -104,7 +107,7 @@ function Login() {
             className={classes.LoginBtn}
             disabled={disable}
             onClick={() => {
-              dispatch(login({ email, password }));
+              dispatch(login({ email, password }, history));
             }}
           >
             Login

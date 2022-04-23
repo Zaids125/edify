@@ -17,6 +17,7 @@ import { Box } from "@mui/system";
 import { emailValidator, phoneValidator } from "../../utils/validators";
 import { signup_start } from "../../state/actions/auth";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -49,6 +50,8 @@ function Signup() {
       setPassword(e.target.value);
     }
   };
+
+  const history = useHistory();
 
   return (
     <div className={classes.Signup}>
@@ -127,7 +130,9 @@ function Signup() {
             className={classes.SignupBtn}
             disabled={disable}
             onClick={() =>
-              dispatch(signup_start({ email, firstName, lastName, password }))
+              dispatch(
+                signup_start({ email, firstName, lastName, password }, history)
+              )
             }
           >
             Signup

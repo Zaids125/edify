@@ -1,6 +1,6 @@
 import axiosInstance from "../../adapters/api/axiosInstance";
 
-export const login = (loginData) => async (dispatch) => {
+export const login = (loginData, history) => async (dispatch) => {
   try {
     dispatch({ type: "START_LOADING" });
     const res = await axiosInstance.post("/auth/login", loginData);
@@ -11,6 +11,7 @@ export const login = (loginData) => async (dispatch) => {
       type: "SUCCESS",
       payload: { success: "Signed In Successfully" },
     });
+    history.push("/courses");
   } catch (error) {
     console.log(error);
     dispatch({ type: "ERROR", payload: error.response.data });
