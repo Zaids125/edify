@@ -37,10 +37,11 @@ export const signup_start = (signUpData, history) => async (dispatch) => {
   }
 };
 
-export const logout = () => (dispatch) => {
+export const logout = (history) => (dispatch) => {
   dispatch({
     type: "LOGOUT",
   });
+  history.push("/");
   dispatch({
     type: "SUCCESS",
     payload: { success: "Logged out Successfully" },

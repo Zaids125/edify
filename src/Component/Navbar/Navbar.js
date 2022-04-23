@@ -44,7 +44,10 @@ function Navbar() {
             </Button>
           </>
         ) : (
-          <Button className={classes.btn} onClick={() => dispatch(logout())}>
+          <Button
+            className={classes.btn}
+            onClick={() => dispatch(logout(history))}
+          >
             Log out
           </Button>
         )}
