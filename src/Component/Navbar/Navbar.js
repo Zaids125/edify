@@ -4,10 +4,15 @@ import logo from "../../Imgs/Logo.svg";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../state/actions/auth";
 
 function Navbar() {
-  const [user, setUser] = useState(true);
+  const authReducer = useSelector((state) => state.authReducer);
+  //   const [user, setUser] = useState(true);
   const history = useHistory();
+
+  const dispatch = useDispatch();
 
   return (
     <div className={classes.Navbar}>
@@ -18,12 +23,12 @@ function Navbar() {
       </Link>
       <div
         className={
-          user
+          !authReducer.token
             ? classes.NavbarRight
             : `${classes.NavbarRight} ${classes.NavbarRightLogged} `
         }
       >
-        {user ? (
+        {!authReducer.token ? (
           <>
             <Button
               onClick={() => history.push("/signup")}
@@ -39,7 +44,9 @@ function Navbar() {
             </Button>
           </>
         ) : (
-          <Button className={classes.btn}>Log out</Button>
+          <Button className={classes.btn} onClick={() => dispatch(logout())}>
+            Log out
+          </Button>
         )}
       </div>
     </div>

@@ -15,6 +15,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
 import { emailValidator, phoneValidator } from "../../utils/validators";
+import { signup_start } from "../../state/actions/auth";
+import { useDispatch } from "react-redux";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -22,8 +24,12 @@ function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   const [disable, setDisable] = useState(true);
+
+  const dispatch = useDispatch();
 
   const onChangeHandler = (e) => {
     if (e.target.name === "email") {
@@ -62,7 +68,8 @@ function Signup() {
                 name="firstName"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                // onChange={onChangeHandler}.
+                onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Enter First Name"
               />
             </div>
@@ -76,6 +83,7 @@ function Signup() {
                 className={classes.Name}
                 // onChange={onChangeHandler}
                 placeholder="Enter Last Name"
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
           </Box>
@@ -118,6 +126,9 @@ function Signup() {
             sx={{ width: 410, alignSelf: "center" }}
             className={classes.SignupBtn}
             disabled={disable}
+            onClick={() =>
+              dispatch(signup_start({ email, firstName, lastName, password }))
+            }
           >
             Signup
           </Button>

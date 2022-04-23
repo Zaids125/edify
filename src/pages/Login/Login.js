@@ -15,6 +15,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
 import { emailValidator, phoneValidator } from "../../utils/validators";
+import { useDispatch } from "react-redux";
+import { login } from "../../state/actions/auth";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -43,6 +45,8 @@ function Login() {
       setPassword(e.target.value);
     }
   };
+
+  const dispatch = useDispatch();
 
   return (
     <div className={classes.Login}>
@@ -96,7 +100,13 @@ function Login() {
               Forgot password?
             </Link>
           </Box>
-          <Button className={classes.LoginBtn} disabled={disable}>
+          <Button
+            className={classes.LoginBtn}
+            disabled={disable}
+            onClick={() => {
+              dispatch(login({ email, password }));
+            }}
+          >
             Login
           </Button>
           <p className={classes.NewMember}>
