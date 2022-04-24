@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
 import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 import Portfolio from "../pages/Portfolio/Portfolio";
+import Assignment from "../Component/Assignment/Assignment";
 import Video from "../Component/VideoPlayer/VideoPlayer";
 
 const PublicRoutes = () => (
