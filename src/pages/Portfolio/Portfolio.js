@@ -35,6 +35,11 @@ function Portfolio() {
     dispatch(update_portfolio_details(e.target.value, e.target.name));
   };
 
+  const onDateChangeHandler = (date, fieldName) => {
+    console.log(date, fieldName);
+    dispatch(update_portfolio_details(date, fieldName));
+  };
+
   useEffect(() => {
     if (
       Education ||
@@ -267,6 +272,7 @@ function Portfolio() {
                     setOpen={setOpen}
                     setInternship={setInternship}
                     onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
                   />
                 )}
 
@@ -275,6 +281,7 @@ function Portfolio() {
                     setOpen={setOpen}
                     setCertifications={setCertifications}
                     onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
                   />
                 )}
                 {Projects && (
@@ -282,6 +289,7 @@ function Portfolio() {
                     setOpen={setOpen}
                     setProjects={setProjects}
                     onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
                   />
                 )}
                 {Accomplishments && (

@@ -6,14 +6,27 @@ import {
   Input,
   Radio,
   RadioGroup,
+  TextField,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { update_portfolio_details } from "../../../state/actions/portfolio";
 import classes from "./Modals.module.css";
 
-function Certifications({ setOpen, setCertifications, onChangeHandler }) {
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import DateFnsUtils from "@date-io/date-fns";
+import moment from "moment";
+import { parseISO } from "date-fns";
+
+function Certifications({
+  setOpen,
+  setCertifications,
+  onChangeHandler,
+  onDateChangeHandler,
+}) {
   const {
     certificateProgram,
     certificateOrganization,
@@ -22,6 +35,17 @@ function Certifications({ setOpen, setCertifications, onChangeHandler }) {
     certificateEndDate,
     certificateDescription,
   } = useSelector((state) => state.portfolioReducer.portfolioData);
+
+  useEffect(() => {
+    console.log(
+      moment(certificateStartDate),
+      moment(certificateEndDate),
+      moment(certificateEndDate) > moment(certificateStartDate)
+    );
+    if (moment(certificateEndDate) < moment(certificateStartDate)) {
+      onDateChangeHandler(null, "certificateEndDate");
+    }
+  }, [certificateStartDate, certificateEndDate, onDateChangeHandler]);
 
   return (
     <>
@@ -83,7 +107,35 @@ function Certifications({ setOpen, setCertifications, onChangeHandler }) {
       <Box className={classes.DialogTwoInputs}>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
-          <Input
+
+          <LocalizationProvider
+            utils={DateFnsUtils}
+            dateAdapter={AdapterDateFns}
+          >
+            <DatePicker
+              //   label="Basic example"
+              value={certificateStartDate}
+              minDate={parseISO("2015-01-01")}
+              maxDate={parseISO("2026-12-31")}
+              onChange={(newValue) => {
+                // setValue(newValue);
+                // console.log(newValue);
+                onDateChangeHandler(newValue, "certificateStartDate");
+              }}
+              inputFormat="dd/MM/yyyy"
+              toolbarPlaceholder="DD/MM/YYYY"
+              InputProps={{ style: { width: 220 } }}
+              renderInput={(params) => (
+                <TextField
+                  size="small"
+                  readonly
+                  value={certificateStartDate}
+                  {...params}
+                />
+              )}
+            />
+          </LocalizationProvider>
+          {/* <Input
             id="certificateStartDate"
             type="date"
             name="certificateStartDate"
@@ -92,11 +144,28 @@ function Certifications({ setOpen, setCertifications, onChangeHandler }) {
             value={certificateStartDate}
             onChange={onChangeHandler}
             placeholder="Enter Start Date"
-          />
+          /> */}
         </div>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
-          <Input
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              value={certificateEndDate}
+              openTo={"year"}
+              minDate={parseISO(certificateStartDate) || parseISO("2015-01-01")}
+              maxDate={parseISO("2026-12-31")}
+              onChange={(newValue) => {
+                onDateChangeHandler(newValue, "certificateEndDate");
+              }}
+              inputFormat="dd/MM/yyyy"
+              toolbarPlaceholder="DD/MM/YYYY"
+              InputProps={{ style: { width: 220 } }}
+              renderInput={(params) => (
+                <TextField size="small" readonly {...params} />
+              )}
+            />
+          </LocalizationProvider>
+          {/* <Input
             id="certificateEndDate"
             type="date"
             name="certificateEndDate"
@@ -105,7 +174,7 @@ function Certifications({ setOpen, setCertifications, onChangeHandler }) {
             value={certificateEndDate}
             onChange={onChangeHandler}
             placeholder="Enter End Date"
-          />
+          /> */}
         </div>
       </Box>
       <Box className={classes.DialogOneInput}>

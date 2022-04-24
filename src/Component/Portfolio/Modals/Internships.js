@@ -1,10 +1,22 @@
-import { Button, Input } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
+import { Button, Input, TextField } from "@mui/material";
+import { Box, fontSize } from "@mui/system";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import classes from "./Modals.module.css";
+// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import DateFnsUtils from "@date-io/date-fns";
+import moment from "moment";
+import { parseISO } from "date-fns";
 
-function Internships({ setOpen, setInternship, onChangeHandler }) {
+function Internships({
+  setOpen,
+  setInternship,
+  onChangeHandler,
+  onDateChangeHandler,
+}) {
   const {
     internshipProfile,
     internshipOrganization,
@@ -13,6 +25,17 @@ function Internships({ setOpen, setInternship, onChangeHandler }) {
     internshipEndDate,
     internshipDescription,
   } = useSelector((state) => state.portfolioReducer.portfolioData);
+
+  useEffect(() => {
+    console.log(
+      moment(internshipStartDate),
+      moment(internshipEndDate),
+      moment(internshipEndDate) > moment(internshipStartDate)
+    );
+    if (moment(internshipEndDate) < moment(internshipStartDate)) {
+      onDateChangeHandler(null, "internshipEndDate");
+    }
+  }, [internshipStartDate, internshipEndDate, onDateChangeHandler]);
 
   return (
     <>
@@ -74,29 +97,53 @@ function Internships({ setOpen, setInternship, onChangeHandler }) {
       <Box className={classes.DialogTwoInputs}>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
-          <Input
-            id="internshipStartDate"
-            type="date"
-            name="internshipStartDate"
-            value={internshipStartDate}
-            sx={{ width: 220, marginRight: 5 }}
-            className={classes.Name}
-            onChange={onChangeHandler}
-            placeholder="Enter Start Date"
-          />
+          <LocalizationProvider
+            utils={DateFnsUtils}
+            dateAdapter={AdapterDateFns}
+          >
+            <DatePicker
+              //   label="Basic example"
+              value={internshipStartDate}
+              minDate={parseISO("2015-01-01")}
+              maxDate={parseISO("2026-12-31")}
+              onChange={(newValue) => {
+                // setValue(newValue);
+                // console.log(newValue);
+                onDateChangeHandler(newValue, "internshipStartDate");
+              }}
+              inputFormat="dd/MM/yyyy"
+              toolbarPlaceholder="DD/MM/YYYY"
+              InputProps={{ style: { width: 220 } }}
+              renderInput={(params) => (
+                <TextField
+                  size="small"
+                  readonly
+                  value={internshipStartDate}
+                  {...params}
+                />
+              )}
+            />
+          </LocalizationProvider>
         </div>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
-          <Input
-            id="internshipEndDate"
-            type="date"
-            name="internshipEndDate"
-            value={internshipEndDate}
-            sx={{ width: 220, marginRight: 5 }}
-            className={classes.Name}
-            onChange={onChangeHandler}
-            placeholder="Enter End Date"
-          />
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              value={internshipEndDate}
+              openTo={"year"}
+              minDate={parseISO(internshipStartDate) || parseISO("2015-01-01")}
+              maxDate={parseISO("2026-12-31")}
+              onChange={(newValue) => {
+                onDateChangeHandler(newValue, "internshipEndDate");
+              }}
+              inputFormat="dd/MM/yyyy"
+              toolbarPlaceholder="DD/MM/YYYY"
+              InputProps={{ style: { width: 220 } }}
+              renderInput={(params) => (
+                <TextField size="small" readonly {...params} />
+              )}
+            />
+          </LocalizationProvider>
         </div>
       </Box>
       <Box className={classes.DialogOneInput}>
