@@ -9,9 +9,20 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { update_portfolio_details } from "../../../state/actions/portfolio";
 import classes from "./Modals.module.css";
 
-function Certifications({ setOpen, setCertifications }) {
+function Certifications({ setOpen, setCertifications, onChangeHandler }) {
+  const {
+    certificateProgram,
+    certificateOrganization,
+    certificateLocation,
+    certificateStartDate,
+    certificateEndDate,
+    certificateDescription,
+  } = useSelector((state) => state.portfolioReducer.portfolioData);
+
   return (
     <>
       <Box
@@ -28,12 +39,13 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Training program</p>
           <Input
-            id="program"
+            id="certificateProgram"
             type="text"
-            name="program"
+            name="certificateProgram"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            value={certificateProgram}
+            onChange={onChangeHandler}
             placeholder="E.g. Software Developer"
           />
         </div>
@@ -42,12 +54,13 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Organization</p>
           <Input
-            id="organization"
+            id="certificateOrganization"
             type="text"
-            name="organization"
+            name="certificateOrganization"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            value={certificateOrganization}
+            onChange={onChangeHandler}
             placeholder="E.g. Udemy"
           />
         </div>
@@ -56,12 +69,13 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Location</p>
           <Input
-            id="location"
+            id="certificateLocation"
             type="text"
-            name="location"
+            name="certificateLocation"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            value={certificateLocation}
+            onChange={onChangeHandler}
             placeholder="E.g. Mumbai or online"
           />
         </div>
@@ -70,24 +84,26 @@ function Certifications({ setOpen, setCertifications }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
           <Input
-            id="startDate"
+            id="certificateStartDate"
             type="date"
-            name="startDate"
+            name="certificateStartDate"
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            value={certificateStartDate}
+            onChange={onChangeHandler}
             placeholder="Enter Start Date"
           />
         </div>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
           <Input
-            id="endDate"
+            id="certificateEndDate"
             type="date"
-            name="endDate"
+            name="certificateEndDate"
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            value={certificateEndDate}
+            onChange={onChangeHandler}
             placeholder="Enter End Date"
           />
         </div>
@@ -98,12 +114,13 @@ function Certifications({ setOpen, setCertifications }) {
             Description (optional)
           </p>
           <Input
-            id="description"
+            id="certificateDescription"
             type="text"
-            name="description"
+            name="certificateDescription"
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            value={certificateDescription}
+            onChange={onChangeHandler}
             placeholder="Enter description of work done (250 max letter)"
           />
         </div>

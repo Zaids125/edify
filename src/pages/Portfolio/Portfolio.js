@@ -12,6 +12,8 @@ import CertificationsModal from "../../Component/Portfolio/Modals/Certifications
 import AccomplishmentsModal from "../../Component/Portfolio/Modals/Accomplishments";
 import ProjectsModal from "../../Component/Portfolio/Modals/Projects";
 import EducationModal from "../../Component/Portfolio/Modals/Education";
+import { useDispatch, useSelector } from "react-redux";
+import { update_portfolio_details } from "../../state/actions/portfolio";
 
 function Portfolio() {
   const [Education, setEducation] = useState(false);
@@ -20,6 +22,18 @@ function Portfolio() {
   const [Projects, setProjects] = useState(false);
   const [Accomplishments, setAccomplishments] = useState(false);
   const [Open, setOpen] = useState(false);
+
+  const { firstName, lastName, email, phone, city, district, skills } =
+    useSelector((state) => state.portfolioReducer.portfolioData);
+
+  console.log({ firstName, lastName, email, phone, city, district });
+
+  const dispatch = useDispatch();
+
+  const onChangeHandler = (e) => {
+    console.log(e.target.value, e.target.name);
+    dispatch(update_portfolio_details(e.target.value, e.target.name));
+  };
 
   useEffect(() => {
     if (
@@ -61,7 +75,8 @@ function Portfolio() {
                 name="firstName"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={firstName || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter First Name"
               />
             </div>
@@ -73,7 +88,8 @@ function Portfolio() {
                 name="lastName"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={lastName || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter Last Name"
               />
             </div>
@@ -87,7 +103,8 @@ function Portfolio() {
                 name="email"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={email || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter your Email Address"
               />
             </div>
@@ -99,7 +116,8 @@ function Portfolio() {
                 name="phone"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={phone || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter your Mobile Number"
               />
             </div>
@@ -113,7 +131,8 @@ function Portfolio() {
                 name="city"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={city || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter the city you live in"
               />
             </div>
@@ -125,7 +144,8 @@ function Portfolio() {
                 name="district"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={district || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter the district you live in"
               />
             </div>
@@ -182,8 +202,9 @@ function Portfolio() {
                 type="text"
                 name="skills"
                 sx={{ width: 720, marginRight: 5 }}
+                value={skills}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                onChange={onChangeHandler}
                 placeholder="Add your skills"
               />
             </div>
@@ -237,6 +258,7 @@ function Portfolio() {
                   <EducationModal
                     setOpen={setOpen}
                     setEducation={setEducation}
+                    onChangeHandler={onChangeHandler}
                   />
                 )}
 
@@ -244,6 +266,7 @@ function Portfolio() {
                   <InternshipsModal
                     setOpen={setOpen}
                     setInternship={setInternship}
+                    onChangeHandler={onChangeHandler}
                   />
                 )}
 
@@ -251,15 +274,21 @@ function Portfolio() {
                   <CertificationsModal
                     setOpen={setOpen}
                     setCertifications={setCertifications}
+                    onChangeHandler={onChangeHandler}
                   />
                 )}
                 {Projects && (
-                  <ProjectsModal setOpen={setOpen} setProjects={setProjects} />
+                  <ProjectsModal
+                    setOpen={setOpen}
+                    setProjects={setProjects}
+                    onChangeHandler={onChangeHandler}
+                  />
                 )}
                 {Accomplishments && (
                   <AccomplishmentsModal
                     setOpen={setOpen}
                     setAccomplishments={setAccomplishments}
+                    onChangeHandler={onChangeHandler}
                   />
                 )}
               </div>

@@ -12,7 +12,7 @@ import { orange } from "@mui/material/colors";
 import React from "react";
 import classes from "./Modals.module.css";
 
-function Education({ setOpen, setEducation }) {
+function Education({ setOpen, setEducation, onChangeHandler }) {
   return (
     <>
       <Box

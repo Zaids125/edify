@@ -9,8 +9,17 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import classes from "./Modals.module.css";
-function Projects({ setOpen, setProjects }) {
+function Projects({ setOpen, setProjects, onChangeHandler }) {
+  const {
+    projectsTitle,
+    projectsStartDate,
+    projectsEndDate,
+    projectsDescription,
+    projectsProjectLink,
+  } = useSelector((state) => state.portfolioReducer.portfolioData);
+
   return (
     <>
       <Box
@@ -27,12 +36,13 @@ function Projects({ setOpen, setProjects }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Title</p>
           <Input
-            id="title"
+            id="projectsTitle"
             type="text"
-            name="title"
+            name="projectsTitle"
+            value={projectsTitle}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="E.g. Software Developer"
           />
         </div>
@@ -41,24 +51,26 @@ function Projects({ setOpen, setProjects }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
           <Input
-            id="startDate"
+            id="projectsStartDate"
             type="number"
-            name="startDate"
+            name="projectsStartDate"
+            value={projectsStartDate}
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter Start Date"
           />
         </div>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
           <Input
-            id="endDate"
+            id="projectsEndDate"
             type="number"
-            name="endDate"
+            name="projectsEndDate"
+            value={projectsEndDate}
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter End Date"
           />
         </div>
@@ -69,12 +81,13 @@ function Projects({ setOpen, setProjects }) {
             Description (optional)
           </p>
           <Input
-            id="description"
+            id="projectsDescription"
             type="text"
-            name="description"
+            name="projectsDescription"
+            value={projectsDescription}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter description of work done (250 max letter)"
           />
         </div>
@@ -85,12 +98,13 @@ function Projects({ setOpen, setProjects }) {
             Project link (optional)
           </p>
           <Input
-            id="projectLink"
+            id="projectsProjectLink"
             type="text"
-            name="projectLink"
+            name="projectsProjectLink"
+            value={projectsProjectLink}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="E.g. www/myproject.com"
           />
         </div>

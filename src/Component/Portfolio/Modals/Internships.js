@@ -1,9 +1,19 @@
 import { Button, Input } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import classes from "./Modals.module.css";
 
-function Internships({ setOpen, setInternship }) {
+function Internships({ setOpen, setInternship, onChangeHandler }) {
+  const {
+    internshipProfile,
+    internshipOrganization,
+    internshipLocation,
+    internshipStartDate,
+    internshipEndDate,
+    internshipDescription,
+  } = useSelector((state) => state.portfolioReducer.portfolioData);
+
   return (
     <>
       <Box
@@ -20,12 +30,13 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Profile</p>
           <Input
-            id="profile"
+            id="internshipProfile"
             type="text"
-            name="profile"
+            name="internshipProfile"
+            value={internshipProfile}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="E.g. Software Developer"
           />
         </div>
@@ -34,12 +45,13 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Organization</p>
           <Input
-            id="organization"
+            id="internshipOrganization"
             type="text"
-            name="organization"
+            name="internshipOrganization"
+            value={internshipOrganization}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="E.g. Microsoft"
           />
         </div>
@@ -48,12 +60,13 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Location</p>
           <Input
-            id="location"
+            id="internshipLocation"
             type="text"
-            name="location"
+            name="internshipLocation"
+            value={internshipLocation}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="E.g. Mumbai or work from home"
           />
         </div>
@@ -62,24 +75,26 @@ function Internships({ setOpen, setInternship }) {
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>Start Date</p>
           <Input
-            id="startDate"
+            id="internshipStartDate"
             type="date"
-            name="startDate"
+            name="internshipStartDate"
+            value={internshipStartDate}
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter Start Date"
           />
         </div>
         <div>
           <p style={{ fontSize: 12, color: "#262C5B" }}>End Date</p>
           <Input
-            id="endDate"
+            id="internshipEndDate"
             type="date"
-            name="endDate"
+            name="internshipEndDate"
+            value={internshipEndDate}
             sx={{ width: 220, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter End Date"
           />
         </div>
@@ -90,12 +105,13 @@ function Internships({ setOpen, setInternship }) {
             Description (optional)
           </p>
           <Input
-            id="description"
+            id="internshipDescription"
             type="text"
-            name="description"
+            name="internshipDescription"
+            value={internshipDescription}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter description of work done (250 max letter)"
           />
         </div>

@@ -9,9 +9,13 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import classes from "./Modals.module.css";
 
-function Accomplishments({ setOpen, setAccomplishments }) {
+function Accomplishments({ setOpen, setAccomplishments, onChangeHandler }) {
+  const { accomplishmentsDescription } = useSelector(
+    (state) => state.portfolioReducer.portfolioData
+  );
   return (
     <>
       <Box
@@ -30,12 +34,13 @@ function Accomplishments({ setOpen, setAccomplishments }) {
             Description (optional)
           </p>
           <Input
-            id="description"
+            id="accomplishmentsDescription"
             type="text"
-            name="description"
+            name="accomplishmentsDescription"
+            value={accomplishmentsDescription}
             sx={{ width: 518, marginRight: 5 }}
             className={classes.Name}
-            // onChange={onChangeHandler}
+            onChange={onChangeHandler}
             placeholder="Enter description of Project (250 max letter)"
           />
         </div>
