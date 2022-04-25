@@ -264,6 +264,7 @@ function Portfolio() {
                     setOpen={setOpen}
                     setEducation={setEducation}
                     onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
                   />
                 )}
 
