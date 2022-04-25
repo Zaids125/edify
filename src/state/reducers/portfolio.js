@@ -20,6 +20,8 @@ const portfolioReducer = (state = initialState, action) => {
       console.log("REACHED HERE", payload.inputName, payload.inputData);
       let portfolioData = JSON.parse(localStorage.getItem("portfolioData"));
 
+      if (portfolioData === null) portfolioData = {};
+
       //   if (inputName === "firstName") {
       portfolioData[inputName] = inputData;
       //   }
