@@ -42,7 +42,7 @@ function compile() {
 	}
 
 	// Post request to compile endpoint
-	Axios.post(`http://localhost:8000/compile`, {
+	Axios.post(`http://localhost:8001/compile`, {
 	code: userCode,
 	language: userLang,
 	input: userInput }).then((res) => {

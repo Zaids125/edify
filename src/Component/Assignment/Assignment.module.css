@@ -21,9 +21,9 @@ width: 200px;
 }
 
 .ClearBtn{
-  position: relative;
-  bottom: 112px;
-  right: -165px;
+  position: absolute;
+  bottom: 12px;
+  right: 5px;
   width: 80px;
   height: 40px;
   font-size: 22px;
