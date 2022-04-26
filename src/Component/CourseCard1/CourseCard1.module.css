@@ -41,6 +41,11 @@
     justify-content: space-between;
 }
 
+.CourseDetails > div{
+    font-size: 13px;
+
+}
+
 .CourseDetails > div {
 
 }
