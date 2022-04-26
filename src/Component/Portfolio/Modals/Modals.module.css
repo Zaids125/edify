@@ -1,0 +1,61 @@
+.RadioContainer {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-left: 6.5% !important;
+    margin-top: 24px !important;
+}
+
+
+.DialogTwoInputs, .DialogOneInput {
+    margin-top: 24px;
+}
+
+
+.DialogTwoInputs input::placeholder{
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    letter-spacing: 1px !important;
+}
+
+.DialogTwoInputs, .DialogOneInput {
+    display: flex;
+    width: 600px !important;
+    justify-content: space-around;
+}
+
+.DialogTwoInputs div, .DialogTwoInputs input, .DialogOneInput div, .DialogOneInput input  {
+    /* width: 240px !important; */
+    margin: 0 auto !important;
+}
+
+.DialogOneInputSmall > div {
+    margin: 0 !important;
+    margin-left: 6.5% !important;
+}
+
+.DialogOneInputSmall input {
+    margin: 0 !important;
+}
+
+
+
+.SaveBtn {
+    margin-top: 30px !important;
+    width: 176px !important;
+    height: 52px !important;
+    background: linear-gradient(259.04deg, #F53939 4.27%, #FF6F1E 23.72%, #FFC939 99.98%) !important;
+    border-radius: 100px !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+}
+
+.SaveBtnSmall {
+    margin-top: 30px !important;
+    width: 89px !important;
+    height: 40px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    margin-left: 6.5% !important;
+}

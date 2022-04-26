@@ -1,11 +1,61 @@
-import { Button, IconButton, Input, InputAdornment } from "@mui/material";
+import { Button, Input } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SideBar from "../../Component/SideBar/SideBar";
 import classes from "./Portfolio.module.css";
-import { BsPlusSquareFill } from "react-icons/bs";
+import { BsPlusLg } from "react-icons/bs";
+import Dialog from "@mui/material/Dialog";
+
+import { orange } from "@mui/material/colors";
+import InternshipsModal from "../../Component/Portfolio/Modals/Internships";
+import CertificationsModal from "../../Component/Portfolio/Modals/Certifications";
+import AccomplishmentsModal from "../../Component/Portfolio/Modals/Accomplishments";
+import ProjectsModal from "../../Component/Portfolio/Modals/Projects";
+import EducationModal from "../../Component/Portfolio/Modals/Education";
+import { useDispatch, useSelector } from "react-redux";
+import { update_portfolio_details } from "../../state/actions/portfolio";
 
 function Portfolio() {
+  const [Education, setEducation] = useState(false);
+  const [Internship, setInternship] = useState(false);
+  const [Certifications, setCertifications] = useState(false);
+  const [Projects, setProjects] = useState(false);
+  const [Accomplishments, setAccomplishments] = useState(false);
+  const [Open, setOpen] = useState(false);
+
+  const { firstName, lastName, email, phone, city, district, skills } =
+    useSelector((state) => state.portfolioReducer.portfolioData);
+
+  console.log({ firstName, lastName, email, phone, city, district });
+
+  const dispatch = useDispatch();
+
+  const onChangeHandler = (e) => {
+    console.log(e.target.value, e.target.name);
+    dispatch(update_portfolio_details(e.target.value, e.target.name));
+  };
+
+  const onDateChangeHandler = (date, fieldName) => {
+    console.log(date, fieldName);
+    dispatch(update_portfolio_details(date, fieldName));
+  };
+
+  useEffect(() => {
+    if (
+      Education ||
+      Internship ||
+      Certifications ||
+      Projects ||
+      Accomplishments
+    )
+      setOpen(true);
+  }, [Education, Internship, Certifications, Projects, Accomplishments]);
+
+  //   useEffect(() => {
+  //     if (Open) {
+  //     }
+  //   }, [Open]);
+
   return (
     <div className={classes.Portfolio}>
       <div
@@ -30,7 +80,8 @@ function Portfolio() {
                 name="firstName"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={firstName || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter First Name"
               />
             </div>
@@ -42,7 +93,8 @@ function Portfolio() {
                 name="lastName"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={lastName || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter Last Name"
               />
             </div>
@@ -56,19 +108,21 @@ function Portfolio() {
                 name="email"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={email || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter your Email Address"
               />
             </div>
             <div>
               <p>Mobile Number</p>
               <Input
-                id="mobile"
+                id="phone"
                 type="text"
-                name="mobile"
+                name="phone"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={phone || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter your Mobile Number"
               />
             </div>
@@ -82,19 +136,21 @@ function Portfolio() {
                 name="city"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={city || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter the city you live in"
               />
             </div>
             <div>
               <p>District</p>
               <Input
-                id="lastName"
+                id="district"
                 type="text"
-                name="lastName"
+                name="district"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                value={district || ""}
+                onChange={onChangeHandler}
                 placeholder="Enter the district you live in"
               />
             </div>
@@ -103,7 +159,31 @@ function Portfolio() {
             <div>
               <p>Education</p>
               <Button
-                className={classes.EducationBtn}
+                className={classes.AddBtn}
+                onClick={() => setEducation(true)}
+              >
+                <BsPlusLg color="#fff" style={{ marginRight: 10 }} />
+                Add Education
+              </Button>
+            </div>
+          </Box>
+          <Box className={`${classes.OneInput} ${classes.EducationInput}`}>
+            <div>
+              <p>Past Internships</p>
+              <Button
+                className={classes.AddBtn}
+                onClick={() => setInternship(true)}
+              >
+                <BsPlusLg color="#fff" style={{ marginRight: 10 }} />
+                Add Internships
+              </Button>
+            </div>
+          </Box>
+          <Box className={`${classes.OneInput} ${classes.EducationInput}`}>
+            <div>
+              <p>Courses/Certifications</p>
+              <Button
+                className={classes.AddBtn}
                 //   id="firstName"
                 //   type="text"
                 //   name="firstName"
@@ -111,46 +191,14 @@ function Portfolio() {
                 //   className={classes.Name}
                 //   // onChange={onChangeHandler}
                 //   placeholder="Enter First Name"
+                onClick={() => setCertifications(true)}
               >
-                Add Eduction
+                <BsPlusLg color="#fff" style={{ marginRight: 10 }} />
+                Add certifications
               </Button>
             </div>
           </Box>
-          <Box className={classes.OneInput}>
-            <div>
-              <p>Paid Internships</p>
-              <Input
-                id="internship"
-                type="text"
-                name="internship"
-                sx={{ width: 720, marginRight: 5 }}
-                className={classes.Name}
-                // onChange={onChangeHandler}
-                placeholder="Enter your past internships"
-                // endAdornment={
-                //   <InputAdornment position="end">
-                //     <IconButton>
-                //       <BsPlusSquareFill />
-                //     </IconButton>
-                //   </InputAdornment>
-                // }
-              />
-            </div>
-          </Box>
-          <Box className={classes.OneInput}>
-            <div>
-              <p>Courses/Certifications</p>
-              <Input
-                id="courses"
-                type="text"
-                name="courses"
-                sx={{ width: 720, marginRight: 5 }}
-                className={classes.Name}
-                // onChange={onChangeHandler}
-                placeholder="Add you courses and certifications"
-              />
-            </div>
-          </Box>
+
           <Box className={classes.OneInput}>
             <div>
               <p>Skills</p>
@@ -159,40 +207,102 @@ function Portfolio() {
                 type="text"
                 name="skills"
                 sx={{ width: 720, marginRight: 5 }}
+                value={skills}
                 className={classes.Name}
-                // onChange={onChangeHandler}
+                onChange={onChangeHandler}
                 placeholder="Add your skills"
               />
             </div>
           </Box>
-          <Box className={classes.OneInput}>
+
+          <Box className={`${classes.OneInput} ${classes.EducationInput}`}>
             <div>
-              <p>Academia/Personal projects</p>
-              <Input
-                id="projects"
-                type="text"
-                name="projects"
-                sx={{ width: 720, marginRight: 5 }}
-                className={classes.Name}
-                // onChange={onChangeHandler}
-                placeholder="Add your academia or personal projects"
-              />
+              <p>Academia/Personal Projects</p>
+              <Button
+                className={classes.AddBtn}
+                onClick={() => setProjects(true)}
+              >
+                <BsPlusLg color="#fff" style={{ marginRight: 10 }} />
+                Add Projects
+              </Button>
             </div>
           </Box>
-          <Box className={classes.OneInput}>
+
+          <Box className={`${classes.OneInput} ${classes.EducationInput}`}>
             <div>
-              <p>Accomplishments/Other details</p>
-              <Input
-                id="otherDetails"
-                type="text"
-                name="otherDetails"
-                sx={{ width: 720, marginRight: 5 }}
-                className={classes.Name}
-                // onChange={onChangeHandler}
-                placeholder="Add you accomplishments or other details"
-              />
+              <p>Accomplishments/Other Details</p>
+              <Button
+                className={classes.AddBtn}
+                onClick={() => setAccomplishments(true)}
+              >
+                <BsPlusLg color="#fff" style={{ marginRight: 10 }} />
+                Add Other Details
+              </Button>
             </div>
           </Box>
+          {Open && (
+            <Dialog
+              open={Open}
+              onClose={() => {
+                setOpen(false);
+                setEducation(false);
+                setInternship(false);
+                setCertifications(false);
+                setProjects(false);
+                setAccomplishments(false);
+              }}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+              BackdropProps={{
+                style: { backgroundColor: "rgba(255,255,255,0.7)" },
+              }}
+              maxWidth="md"
+            >
+              <div className={classes.DialogContainer}>
+                {Education && (
+                  <EducationModal
+                    setOpen={setOpen}
+                    setEducation={setEducation}
+                    onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
+                  />
+                )}
+
+                {Internship && (
+                  <InternshipsModal
+                    setOpen={setOpen}
+                    setInternship={setInternship}
+                    onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
+                  />
+                )}
+
+                {Certifications && (
+                  <CertificationsModal
+                    setOpen={setOpen}
+                    setCertifications={setCertifications}
+                    onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
+                  />
+                )}
+                {Projects && (
+                  <ProjectsModal
+                    setOpen={setOpen}
+                    setProjects={setProjects}
+                    onChangeHandler={onChangeHandler}
+                    onDateChangeHandler={onDateChangeHandler}
+                  />
+                )}
+                {Accomplishments && (
+                  <AccomplishmentsModal
+                    setOpen={setOpen}
+                    setAccomplishments={setAccomplishments}
+                    onChangeHandler={onChangeHandler}
+                  />
+                )}
+              </div>
+            </Dialog>
+          )}
           <Button className={classes.SaveBtn}>Save</Button>
         </form>
       </div>
