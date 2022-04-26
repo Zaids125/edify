@@ -3,6 +3,7 @@ import classes from "./MyCourseCard.module.css";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { BsCameraVideoFill } from "react-icons/bs";
 import LinearWithValueLabel from "../ProgressBar/ProgressBar";
+import { Link } from "react-router-dom";
 
 function MyCourseCard() {
   return (
@@ -25,7 +26,9 @@ function MyCourseCard() {
             <p>Completed on 23rd June 2022</p>
             <LinearWithValueLabel />
           </div>
-          <p className={classes.viewDetails}>
+          <p onClick={()=> window.open("http://localhost:3000/my-courses/abc/assignment1")}
+            className={classes.viewDetails} 
+          >
             View Details <AiOutlineArrowRight />
           </p>
         </div>

@@ -19,7 +19,9 @@ function CourseTime() {
           <AiOutlineFieldTime />
           <p>3 Months</p>
         </div>
-        <Button className={classes.EnrollNowBtn}>Enroll Now</Button>
+        <Button 
+        onClick={()=> window.open("http://localhost:3000/my-courses/abc/assignment1")}
+        className={classes.EnrollNowBtn}>Enroll Now</Button>
       </div>
     </div>
   );

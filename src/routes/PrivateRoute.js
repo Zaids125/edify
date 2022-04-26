@@ -7,6 +7,9 @@ import CourseEnroll from "../pages/CourseEnroll/CourseEnroll";
 import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 import Portfolio from "../pages/Portfolio/Portfolio";
 import Video from "../Component/VideoPlayer/VideoPlayer";
+import Assignment from "../Component/Assignment/Assignment";
+
+import AssignmentInd from "@mui/icons-material/AssignmentInd";
 
 const PrivateRoutes = () => (
   <Switch>
@@ -19,11 +22,11 @@ const PrivateRoutes = () => (
     <Route path="/my-courses" exact>
       <MyCourses />
     </Route>
-    <Route path="/my-courses/:id" exact>
-      <CourseEnrolled />
+    <Route path="/my-courses/:id/video" exact>
+      <CourseEnrolled children={<Video/>}/>
     </Route>
     <Route path="/my-courses/:id/assignment1" exact>
-      <CourseEnrolled children={<Video />} />
+      <CourseEnrolled children={<Assignment />} />
     </Route>
     <Route path="/portfolio">
       <Portfolio />

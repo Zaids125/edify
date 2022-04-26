@@ -1,5 +1,5 @@
 .Questions{
-  max-width: 350px;
+  max-width: 100%;
   width: auto;
   background-color: #f2f2f2;
   height: auto;
@@ -39,7 +39,7 @@ width: 200px;
 .codeInp{
   box-sizing: border-box;
   min-height: 80px;
-  min-width: 24vw;
+  min-width: 30vw;
   width: 100%;
   height: 100%;
   resize: vertical;
@@ -81,7 +81,7 @@ width: 200px;
   resize: vertical;
   overflow: auto;
   background-color: #f2f2f2;
-  color: whitesmoke;
+  color: black;
   padding: 5px;
   margin-right: 25px;
 }
@@ -96,14 +96,14 @@ width: 200px;
   flex: 100%;
   background-color: #242424;
   overflow-y: auto;
-  color: white;
+  color: #1d1d1d;
   position: relative;
 }
 
 .SpinnerBox{
   min-width: 30vw;
   flex: 100%;
-  background-color: #242424;
+  background-color: #1d1d1d;
   overflow-y: auto;
   display: flex;
   justify-content: center;

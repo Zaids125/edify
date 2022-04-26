@@ -16,7 +16,7 @@ const Toolbar = ({userLang, setUserLang, userTheme,
 	]
 	return (
 		<div className={classes.toolbar}>
-			<h1> Code Compiler</h1>
+			<h1 className={classes.head1}> Code Compiler</h1>
 			<Select options={languages} value={userLang}
 					onChange={(e) => setUserLang(e.value)}
 					placeholder={userLang} />

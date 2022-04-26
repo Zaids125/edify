@@ -15,7 +15,7 @@ const [userCode, setUserCode] = useState(``);
 const [userLang, setUserLang] = useState("python");
 
 // State variable to set editors default theme
-const [userTheme, setUserTheme] = useState("vs-dark");
+const [userTheme, setUserTheme] = useState("light");
 
 // State variable to set editors default font size
 const [fontSize, setFontSize] = useState(20);
@@ -59,7 +59,7 @@ function clearOutput() {
 
 return (
 
-	<div style={{display:"inline-flex", margin:"24px"}}>
+	<div style={{display:"block", margin:"24px"}}>
 			<div className={classes.Questions} style={{marginRight:"16px"}}>
 				<h4>Question</h4>
 				<br></br>
@@ -84,7 +84,7 @@ return (
 			<Editor
 				options={options}
 				height="calc(80vh - 50px)"
-				width="100%"
+				width="auto"
 				theme={userTheme}
 				language={userLang}
 				defaultLanguage="python"
