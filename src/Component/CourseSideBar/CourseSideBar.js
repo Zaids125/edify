@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import classes from "./CourseSideBar.module.css";
-import { AiFillPlayCircle } from "react-icons/ai";
 import {
   MdOutlineMenuBook,
   MdAssignment,
@@ -52,6 +51,7 @@ function CourseSideBar({ courseData }) {
           const myData = Object.keys(data).map((key) => {
             return data[key];
           });
+
           return (
             <>
               <div className={classes.Topics}>
@@ -59,8 +59,15 @@ function CourseSideBar({ courseData }) {
                   <p className={classes.SideBarHeader}>Unit {index + 1}</p>
                   <p className={classes.HeaderData}>1/6 | 2 hr 20 min</p>
                 </div>
-                {myData.map((data, index) => {
-                  return <TopicContainer topicData={data} />;
+                {myData.map((data, topicIndex) => {
+                  return (
+                    <TopicContainer
+                      topicData={data}
+                      topicIndex={topicIndex}
+                      unitIndex={index}
+                      courseId={courseData.courseId._id}
+                    />
+                  );
                 })}
                 {/* <div className={classes.TopicContainer}>
                       <div className={classes.Topic}>

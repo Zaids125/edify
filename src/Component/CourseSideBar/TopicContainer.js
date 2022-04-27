@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import classes from "./CourseSideBar.module.css";
 import { AiFillPlayCircle } from "react-icons/ai";
 import axiosInstance from "../../adapters/api/axiosInstance";
+import { useHistory } from "react-router-dom";
 
-function TopicContainer({ topicData }) {
+function TopicContainer({ topicData, topicIndex, unitIndex, courseId }) {
   useEffect(() => {
     const getDuration = async () => {
       const res = await axiosInstance.get(
@@ -26,8 +27,17 @@ function TopicContainer({ topicData }) {
   const [duration, setDuration] = useState(0);
   const [durationType, setDurationType] = useState("");
 
+  const history = useHistory();
+
   return (
-    <div className={classes.TopicContainer}>
+    <div
+      className={classes.TopicContainer}
+      onClick={() =>
+        history.push(
+          `/my-courses/${courseId}/${unitIndex + 1}/${topicIndex + 1}`
+        )
+      }
+    >
       <div className={classes.Topic}>
         <div
           style={{

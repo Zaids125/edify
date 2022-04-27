@@ -22,8 +22,11 @@ const PrivateRoutes = () => (
     <Route path="/my-courses/:id" exact>
       <CourseEnrolled />
     </Route>
-    <Route path="/my-courses/:id/assignment1" exact>
+    {/* <Route path="/my-courses/:id/assignment1" exact>
       <CourseEnrolled children={<Video />} />
+    </Route> */}
+    <Route path="/my-courses/:id/:unitIndex/:topicIndex" exact>
+      <CourseEnrolled />
     </Route>
     <Route path="/portfolio">
       <Portfolio />

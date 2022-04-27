@@ -8,12 +8,17 @@ import CourseTime from "../../Component/CourseTime/CourseTime";
 import CourseHeader from "../../Component/CourseHeader/CourseHeader";
 import CourseSideBar from "../../Component/CourseSideBar/CourseSideBar";
 import axiosInstance from "../../adapters/api/axiosInstance";
+// import Video from "../Component/VideoPlayer/VideoPlayer";
+import Video from "../../Component/VideoPlayer/VideoPlayer";
 import { useParams } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 function CourseEnrolled({ children }) {
   const params = useParams();
   const courseId = params.id;
   console.log(courseId);
+
+  const { unitIndex, topicIndex } = params;
 
   const [courseData, setCourseData] = useState({});
 
@@ -28,6 +33,16 @@ function CourseEnrolled({ children }) {
     getCourse();
   }, []);
 
+  console.clear();
+
+  console.log({ unitIndex, topicIndex });
+
+  if (
+    typeof topicIndex === "undefined" &&
+    typeof courseData?.courseId?._id !== "undefined"
+  )
+    return <Redirect to={`/my-courses/${courseData?.courseId?._id}/1/1`} />;
+
   return (
     <div className={classes.CourseEnrolled}>
       <div className={classes.CourseContainer}>
@@ -36,7 +51,11 @@ function CourseEnrolled({ children }) {
           <div className={classes.Sidebar}>
             <CourseSideBar courseData={courseData} />
           </div>
-          <div>{children}</div>
+          <div>
+            {typeof courseData?.courseId?.Units !== "undefined" && (
+              <Video courseData={courseData} />
+            )}
+          </div>
         </div>
       </div>
     </div>
