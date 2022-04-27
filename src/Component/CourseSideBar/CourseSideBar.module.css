@@ -19,6 +19,7 @@
     line-height: 28px;
     letter-spacing: 1px;
     color: #262C5B;
+    width: 85%;
 }
 
 .HeaderData {
@@ -43,6 +44,7 @@
     line-height: 20px;
     color: #000000;
     align-items: center;
+    word-break: break-word;
 }
 
 .Topic svg {

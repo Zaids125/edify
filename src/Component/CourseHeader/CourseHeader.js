@@ -3,8 +3,10 @@ import classes from "./CourseHeader.module.css";
 import { MdArrowBackIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 import LinearWithValueLabel from "../ProgressBar/ProgressBar";
+import moment from "moment";
 
-function CourseHeader() {
+function CourseHeader({ courseData }) {
+  const daysLeft = moment(courseData.endDate).diff(moment(), "days");
   return (
     <div className={classes.CourseHeader}>
       <div className={classes.CourseHeaderContainer}>
@@ -15,22 +17,28 @@ function CourseHeader() {
           <p>Back</p>
         </Link>
         <div className={classes.CoursePercent}>
-          <p>25% completed</p>
-          <LinearWithValueLabel />
+          <p>{courseData.progress}% completed</p>
+          <LinearWithValueLabel progress={courseData.progress} />
         </div>
-        <div className={classes.CourseTitle}>Importance of Marketing</div>
+        <div className={classes.CourseTitle}>
+          {courseData?.courseId?.courseName}
+        </div>
         <div className={classes.CourseTime}>
           <div className={classes.CourseStart}>
             <p>Start</p>
-            <p>22/02/2022</p>
+            <p>{moment(courseData.startDate).format("DD/MM/YYYY")}</p>
           </div>
           <div className={classes.CourseEnd}>
             <p>End</p>
-            <p>22/05/2022</p>
+            <p>{moment(courseData.endDate).format("DD/MM/YYYY")}</p>
           </div>
           <div className={classes.CourseDaysLeft}>
-            <p>Days Left</p>
-            <p>58</p>
+            {daysLeft > 0 && (
+              <>
+                <p>Days Left</p>
+                <p>{daysLeft}</p>
+              </>
+            )}
           </div>
         </div>
       </div>

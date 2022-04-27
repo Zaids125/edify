@@ -20,7 +20,7 @@ function UnitChapter({ index, data }) {
       }
     };
     getDuration();
-  });
+  }, []);
 
   const [duration, setDuration] = useState(0);
   const [durationType, setDurationType] = useState("");

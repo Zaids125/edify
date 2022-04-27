@@ -73,10 +73,10 @@ function Landing() {
       <div className={classes.section3}>
         <p>Trending Courses</p>
         <div className={classes.TredingCourseCards}>
+          {/* <CourseCard />
           <CourseCard />
           <CourseCard />
-          <CourseCard />
-          <CourseCard />
+          <CourseCard /> */}
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import classes from "./CourseTime.module.css";
 import { AiOutlineFieldTime, AiOutlineCalendar } from "react-icons/ai";
 import { Button } from "@mui/material";
 import moment from "moment";
+import axiosInstance from "../../adapters/api/axiosInstance";
 
 function CourseTime({ courseData }) {
   const start = moment();
@@ -10,6 +11,12 @@ function CourseTime({ courseData }) {
 
   const months = end.diff(start, "months");
   start.add(months, "months");
+
+  const enrollerCourseHandler = async () => {
+    const res = await axiosInstance.post("/enrolledCourses/add", {
+      courseId: courseData._id,
+    });
+  };
 
   return (
     <div className={classes.CourseTime}>
@@ -28,7 +35,12 @@ function CourseTime({ courseData }) {
             {months} {months > 1 ? "Months" : "Month"}
           </p>
         </div>
-        <Button className={classes.EnrollNowBtn}>Enroll Now</Button>
+        <Button
+          onClick={enrollerCourseHandler}
+          className={classes.EnrollNowBtn}
+        >
+          Enroll Now
+        </Button>
       </div>
     </div>
   );
