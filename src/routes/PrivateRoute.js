@@ -6,6 +6,8 @@ import MyCourses from "../pages/MyCourses/MyCourses";
 import CourseEnroll from "../pages/CourseEnroll/CourseEnroll";
 import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 import Portfolio from "../pages/Portfolio/Portfolio";
+import PortfolioPDF from "../Component/PortfolioPDF/PortfolioPDF";
+
 import Video from "../Component/VideoPlayer/VideoPlayer";
 import Assignment from "../Component/Assignment/Assignment";
 
@@ -25,11 +27,17 @@ const PrivateRoutes = () => (
     <Route path="/my-courses/:id/video" exact>
       <CourseEnrolled children={<Video/>}/>
     </Route>
-    <Route path="/my-courses/:id/assignment1" exact>
-      <CourseEnrolled children={<Assignment />} />
+    {/* <Route path="/my-courses/:id/assignment1" exact>
+      <CourseEnrolled children={<Video />} />
+    </Route> */}
+    <Route path="/my-courses/:id/:unitIndex/:topicIndex" exact>
+      <CourseEnrolled />
     </Route>
     <Route path="/portfolio">
       <Portfolio />
+    </Route>
+    <Route path="/portfoliopdf">
+      <PortfolioPDF />
     </Route>
     <Route path="/" exact>
       {/* <Landing /> */}
