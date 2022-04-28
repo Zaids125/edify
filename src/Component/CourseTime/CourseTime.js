@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./CourseTime.module.css";
 import { AiOutlineFieldTime, AiOutlineCalendar } from "react-icons/ai";
 import { Button } from "@mui/material";
@@ -13,10 +13,26 @@ function CourseTime({ courseData }) {
   start.add(months, "months");
 
   const enrollerCourseHandler = async () => {
-    const res = await axiosInstance.post("/enrolledCourses/add", {
+    await axiosInstance.post("/enrolledCourses/add", {
       courseId: courseData._id,
     });
+    setCourseEnrolled(true);
   };
+
+  const [disableEnroll, setDisableEnroll] = useState(false);
+  const [courseEnrolled, setCourseEnrolled] = useState(false);
+
+  useEffect(() => {
+    const courseExists = async () => {
+      const res = await axiosInstance.get("/enrolledCourses/get", {
+        params: { courseId: courseData._id },
+      });
+      console.clear();
+      console.log(res.data, "DATATATT");
+      if (res.data) setDisableEnroll(true);
+    };
+    courseExists();
+  }, [courseData, courseEnrolled]);
 
   return (
     <div className={classes.CourseTime}>
@@ -38,8 +54,9 @@ function CourseTime({ courseData }) {
         <Button
           onClick={enrollerCourseHandler}
           className={classes.EnrollNowBtn}
+          disabled={disableEnroll}
         >
-          Enroll Now
+          {!disableEnroll ? "Enroll Now" : "Already Enrolled"}
         </Button>
       </div>
     </div>

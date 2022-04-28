@@ -16,7 +16,8 @@ import { Redirect } from "react-router-dom";
 function CourseEnrolled({ children }) {
   const params = useParams();
   const courseId = params.id;
-  console.log(courseId);
+
+  const [markCompleted, setMarkCompleted] = useState(false);
 
   const { unitIndex, topicIndex } = params;
 
@@ -27,13 +28,20 @@ function CourseEnrolled({ children }) {
       const res = await axiosInstance.get("/enrolledCourses/get", {
         params: { courseId },
       });
-      console.log(res.data);
+      console.log("duplicatedFound", res.data);
+      const duplicatedFound = res.data.chapterCompleted.find(
+        (o) => o.unitNumber == unitIndex && o.topicNumber == topicIndex
+      );
+      if (duplicatedFound) setMarkCompleted(true);
+
       setCourseData(res.data);
     };
     getCourse();
-  }, []);
+  }, [markCompleted, courseId, unitIndex, topicIndex]);
 
-  console.clear();
+  useEffect(() => {
+    setMarkCompleted(false);
+  }, [params]);
 
   console.log({ unitIndex, topicIndex });
 
@@ -53,7 +61,11 @@ function CourseEnrolled({ children }) {
           </div>
           <div>
             {typeof courseData?.courseId?.Units !== "undefined" && (
-              <Video courseData={courseData} />
+              <Video
+                setMarkCompleted={setMarkCompleted}
+                markCompleted={markCompleted}
+                courseData={courseData}
+              />
             )}
           </div>
         </div>

@@ -1,5 +1,5 @@
 .CourseCard1 {
-    width: 378px;
+    width: 48vmin;
     height: 212px;
     background: #121843;
     border-radius: 10px;
@@ -48,4 +48,10 @@
 
 .CourseDetails > div {
 
+}
+
+@media only screen and (min-width: 1366px)  {
+    .CourseCard1 {
+        width: 56vmin;
+    }
 }

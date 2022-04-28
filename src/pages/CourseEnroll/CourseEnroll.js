@@ -54,7 +54,6 @@ function Course() {
               const myData = Object.keys(data).map((key) => {
                 return data[key];
               });
-
               return (
                 <UnitBox
                   key={courseData._id + index}

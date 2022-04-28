@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 // IMPORT REDUCERS
 import authReducer from "./auth";
 import portfolioReducer from "./portfolio";
+import alertReducer from "./alert";
 
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -20,6 +21,7 @@ const composeEnhancers =
 const rootReducer = combineReducers({
   authReducer,
   portfolioReducer,
+  alertReducer,
 });
 
 const persistConfig = {

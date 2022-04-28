@@ -57,7 +57,7 @@ function CourseSideBar({ courseData }) {
               <div className={classes.Topics}>
                 <div className={classes.TopicTitle}>
                   <p className={classes.SideBarHeader}>Unit {index + 1}</p>
-                  <p className={classes.HeaderData}>1/6 | 2 hr 20 min</p>
+                  <p className={classes.HeaderData}>{myData.length} Chapters</p>
                 </div>
                 {myData.map((data, topicIndex) => {
                   return (

@@ -2,6 +2,8 @@ import React from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
+import * as MdIcons from "react-icons/md";
+import * as BsIcons from "react-icons/bs";
 
 export const SidebarData = [
   {
@@ -17,27 +19,27 @@ export const SidebarData = [
     cName: "navText",
   },
   {
+    title: "Dashboard",
+    path: "/my-courses",
+    icon: <MdIcons.MdDashboard />,
+    cName: "navText",
+  },
+  {
     title: "Portfolio",
     path: "/portfolio",
-    icon: <FaIcons.FaCartPlus />,
+    icon: <BsIcons.BsFillFileEarmarkBarGraphFill />,
     cName: "navText",
   },
-  {
-    title: "Endorsement",
-    path: "/team",
-    icon: <IoIcons.IoMdPeople />,
-    cName: "navText",
-  },
-  {
-    title: "Messages",
-    path: "/messages",
-    icon: <FaIcons.FaEnvelopeOpenText />,
-    cName: "navText",
-  },
-  {
-    title: "Support",
-    path: "/support",
-    icon: <IoIcons.IoMdHelpCircle />,
-    cName: "navText",
-  },
+  // {
+  //   title: "Messages",
+  //   path: "/messages",
+  //   icon: <FaIcons.FaEnvelopeOpenText />,
+  //   cName: "navText",
+  // },
+  // {
+  //   title: "Support",
+  //   path: "/support",
+  //   icon: <IoIcons.IoMdHelpCircle />,
+  //   cName: "navText",
+  // },
 ];

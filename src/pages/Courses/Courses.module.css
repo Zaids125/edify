@@ -22,6 +22,11 @@
     font-family: 'Montserrat';
 }
 
+.SearchContainer {
+    display: flex;
+    align-items: center;
+}
+
 .SearchButtonContainer {
     position: absolute;
     bottom: 0;
@@ -48,11 +53,61 @@
     border-radius: 100px !important;
 }
 
-.SearchButton:active {
+.SearchButton:active, .AISearchBtn:active {
     border-radius: 100px !important;
+}
+
+.AISearchBtn {
+    background: linear-gradient(259.04deg, #F53939 4.27%, #FF6F1E 23.72%, #FFC939 99.98%) !important;
+    width: 274px !important;
+    height: 40px !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    border-radius: 100px !important;
+}
+
+.AISearchDialog {
+    height: 40vmin;
+    width: 100vmin;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.getCoursesBtn {
+    margin-top: 20px !important;
+    margin-left: 10px !important;
+    color: #000 !important;
+    height: 40px;
+    border-radius: 100px !important;
+    border: 1px solid #000 !important;
+    padding: 10px !important;
+}
+
+.foundCourseHeader {
+    margin: 20px 0;
+    align-self: center;
+}
+
+.foundCourses {
+    align-self: center !important;
+    margin: 5px !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    background: linear-gradient(259.04deg, #F53939 4.27%, #FF6F1E 23.72%, #FFC939 99.98%) !important;
+    border-radius: 100px !important;
+    width: 50% !important;
+    text-align: center !important;
+    color: #000 !important;
 }
 
 .AllCourseCards {
     display: flex;
     flex-wrap: wrap;
+}
+
+.CircularProgress {
+    align-self: center;
+    color: orange;
 }

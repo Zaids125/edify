@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./Signup.module.css";
 import Logo from "../../Imgs/Logo.svg";
 import Auth from "../../Imgs/Auth.png";
@@ -14,10 +14,15 @@ import {
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
-import { emailValidator, phoneValidator } from "../../utils/validators";
+import {
+  emailValidator,
+  passwordValidator,
+  phoneValidator,
+} from "../../utils/validators";
 import { signup_start } from "../../state/actions/auth";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import validator from "validator";
 
 const ariaLabel = { "aria-label": "description" };
 
@@ -32,24 +37,66 @@ function Signup() {
 
   const dispatch = useDispatch();
 
-  const onChangeHandler = (e) => {
-    if (e.target.name === "email") {
-      if (
-        password &&
-        (emailValidator(e.target.value) || phoneValidator(e.target.value))
-      ) {
-        setDisable(false);
-      } else setDisable(true);
+  useEffect(() => {
+    const onChangeHandler = (e) => {
+      // if (e.target.name === "email") setEmail(e.target.value);
+      // else if (e.target.name === "password") setPassword(e.target.value);
+      // else if (e.target.name === "firstName") setFirstName(e.target.value);
+      // else if (e.target.name === "lastName") setLastName(e.target.value);
+      if (!firstName || !lastName || !password || !email) setDisable(true);
+      else setDisable(false);
 
-      setEmail(e.target.value);
-    } else {
-      if (e.target.value && (emailValidator(email) || phoneValidator(email))) {
-        setDisable(false);
-      } else setDisable(true);
+      if (!validator.isEmail(email)) {
+        dispatch({ type: "ERROR", payload: "Enter a valid email address" });
+      }
+      if (firstName.trim() === "") {
+        dispatch({ type: "ERROR", payload: "First Name is required" });
+      }
+      if (password) {
+        if (!passwordValidator(password)) {
+          dispatch({
+            type: "ERROR",
+            payload:
+              "Password should contain atleast 8 characters, one uppercase, one lowercase, one number and atleast one special character",
+          });
+        }
+      }
+      if (lastName.trim() === "") {
+        dispatch({ type: "ERROR", payload: "Last Name is required" });
+      }
+    };
+    onChangeHandler();
+    console.log(firstName, lastName, password, email);
+  }, [firstName, lastName, password, email]);
 
-      setPassword(e.target.value);
-    }
-  };
+  // const onChangeHandler = (e) => {
+  //   if (e.target.name === "email") setEmail(e.target.value);
+  //   else if (e.target.name === "password") setPassword(e.target.value);
+  //   else if (e.target.name === "firstName") setFirstName(e.target.value);
+  //   else if (e.target.name === "lastName") setLastName(e.target.value);
+  //   console.log(firstName, lastName, password, email);
+  //   if (!firstName || !lastName || !password || !email) setDisable(true);
+  //   else setDisable(false);
+
+  //   if (!validator.isEmail(email)) {
+  //     dispatch({ type: "ERROR", payload: "Enter a valid email address" });
+  //   }
+  //   if (firstName.trim() === "") {
+  //     dispatch({ type: "ERROR", payload: "First Name is required" });
+  //   }
+  //   if (password) {
+  //     if (!passwordValidator(password)) {
+  //       dispatch({
+  //         type: "ERROR",
+  //         payload:
+  //           "Password should contain atleast 8 characters, one uppercase, one lowercase, one number and atleast one special character",
+  //       });
+  //     }
+  //   }
+  //   if (lastName.trim() === "") {
+  //     dispatch({ type: "ERROR", payload: "Last Name is required" });
+  //   }
+  // };
 
   const history = useHistory();
 
@@ -61,7 +108,7 @@ function Signup() {
           <img className={classes.Logo} src={Logo} alt="Logo" />
         </div>
         <form className={classes.SignupRight}>
-          <h1>Welcome back</h1>
+          <h1>Welcome</h1>
           <Box className={classes.NameContainer}>
             <div>
               <p>First Name</p>
@@ -71,7 +118,7 @@ function Signup() {
                 name="firstName"
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
-                // onChange={onChangeHandler}.
+                // onChange={onChangeHandler}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Enter First Name"
               />
@@ -85,8 +132,8 @@ function Signup() {
                 sx={{ width: 220, marginRight: 5 }}
                 className={classes.Name}
                 // onChange={onChangeHandler}
-                placeholder="Enter Last Name"
                 onChange={(e) => setLastName(e.target.value)}
+                placeholder="Enter Last Name"
               />
             </div>
           </Box>
@@ -97,7 +144,8 @@ function Signup() {
               type="text"
               name="email"
               className={classes.Email}
-              onChange={onChangeHandler}
+              // onChange={onChangeHandler}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter Email Address"
             />
           </Box>
@@ -107,11 +155,13 @@ function Signup() {
             <Input
               id="password"
               type={showPassword ? "text" : "password"}
+              name="password"
               value={password}
               className={classes.Password}
               placeholder="Enter Password"
               inputProps={ariaLabel}
-              onChange={onChangeHandler}
+              // onChange={onChangeHandler}
+              onChange={(e) => setPassword(e.target.value)}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton

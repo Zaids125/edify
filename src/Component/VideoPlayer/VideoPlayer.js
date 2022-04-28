@@ -7,7 +7,7 @@ import axiosInstance from "../../adapters/api/axiosInstance";
 import classes from "./VideoPlayer.module.css";
 // import ".../pages/CourseEnrolled/MyCourses.module.css";
 
-function VideoPlayer({ courseData }) {
+function VideoPlayer({ courseData, markCompleted, setMarkCompleted }) {
   const params = useParams();
 
   const { id, unitIndex, topicIndex } = params;
@@ -47,6 +47,7 @@ function VideoPlayer({ courseData }) {
       topicIndex: parseInt(topicIndex),
       courseId: courseData.courseId._id,
     });
+    setMarkCompleted(true);
     console.log(res.data);
   };
 
@@ -92,8 +93,14 @@ function VideoPlayer({ courseData }) {
           </p>
         </div>
         <div style={{ paddingTop: "40px" }}>
-          <Button onClick={() => completedHandler()} className={classes.Button}>
-            Mark as Completed
+          <Button
+            disabled={markCompleted}
+            onClick={() => {
+              if (!markCompleted) completedHandler();
+            }}
+            className={classes.Button}
+          >
+            {!markCompleted ? "Mark as Completed" : "Chapter Completed"}
           </Button>
         </div>
       </div>

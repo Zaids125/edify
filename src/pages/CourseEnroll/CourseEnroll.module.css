@@ -4,8 +4,9 @@
     background-color: #fff;
     min-height: calc(100vh - 78px);
 }
+
 .CourseContainer {
-    width: 100%;
+    width: calc(100% - 215px);
 }
 
 .backBtn {
@@ -37,16 +38,18 @@
 
 .CourseHeader {
     display: flex;
-    width: calc(100% - 50px);
+    width: calc(100% - 45px);
+    margin: 0 auto;
     padding: 20px;
     justify-content: space-between;
 }
 
 .CourseHeader > img {
-    width: 68%;
+    width: 96vmin;
     height: 212px;
     border-radius: 10px; 
 }
+
 
 .CourseDetails {
     display: flex;
@@ -65,4 +68,10 @@
 
 .CourseTime {
     margin-right: 10px;
+}
+
+@media only screen and (min-width: 1366px)  {
+    .CourseHeader > img {
+        width: 100vmin;
+    }
 }

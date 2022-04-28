@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "./CourseHeader.module.css";
 import { MdArrowBackIos } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import moment from "moment";
 
 function CourseHeader({ courseData }) {
   const daysLeft = moment(courseData.endDate).diff(moment(), "days");
+
   return (
     <div className={classes.CourseHeader}>
       <div className={classes.CourseHeaderContainer}>
@@ -17,7 +18,7 @@ function CourseHeader({ courseData }) {
           <p>Back</p>
         </Link>
         <div className={classes.CoursePercent}>
-          <p>{courseData.progress}% completed</p>
+          <p>{Math.round(courseData.progress)}% completed</p>
           <LinearWithValueLabel progress={courseData.progress} />
         </div>
         <div className={classes.CourseTitle}>
@@ -42,6 +43,7 @@ function CourseHeader({ courseData }) {
           </div>
         </div>
       </div>
+      {/* <div className={classes.line}></div> */}
     </div>
   );
 }

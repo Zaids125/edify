@@ -1,3 +1,4 @@
+import { Box, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../../adapters/api/axiosInstance";
 import MyCourseCard from "../../Component/MyCourseCard/MyCourseCard";
@@ -8,12 +9,15 @@ function MyCourses() {
   const [active, setActive] = useState(true);
 
   const [allCourses, setAllCourses] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getAllCourses = async () => {
+      setLoading(true);
       const res = await axiosInstance.get("/enrolledCourses/all");
       setAllCourses(res.data.enrolledCourses);
       console.log(res.data.enrolledCourses);
+      setLoading(false);
     };
     getAllCourses();
   }, [active]);
@@ -45,17 +49,32 @@ function MyCourses() {
           </p>
         </div>
         <div className={classes.line}></div>
-        <div className={classes.AllCourses}>
-          {allCourses.map((data) => {
-            if (active && data.status === "Active")
-              return <MyCourseCard courseData={data} />;
-            else if (!active && data.status === "Completed")
-              return <MyCourseCard courseData={data} />;
-          })}
-          {/* <MyCourseCard />
+        {loading ? (
+          <Box
+            className={classes.CircularProgress}
+            color="inherit"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "70%",
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        ) : (
+          <div className={classes.AllCourses}>
+            {allCourses.map((data) => {
+              if (active && data.status === "Active")
+                return <MyCourseCard courseData={data} />;
+              else if (!active && data.status === "Completed")
+                return <MyCourseCard courseData={data} />;
+            })}
+            {/* <MyCourseCard />
           <MyCourseCard />
           <MyCourseCard /> */}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

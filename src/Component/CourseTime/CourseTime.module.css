@@ -50,3 +50,9 @@
     letter-spacing: 1.25px !important;
     text-transform: uppercase !important;
 }
+
+.EnrollNowBtn:disabled {
+    background: rgb(198, 198, 198) !important;
+    cursor: not-allowed !important;
+    color: #545454 !important;
+}
