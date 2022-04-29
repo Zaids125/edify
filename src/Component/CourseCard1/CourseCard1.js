@@ -43,9 +43,9 @@ function CourseCard1({ courseData }) {
   return (
     <div className={classes.CourseCard1}>
       <div className={classes.CourseCard1Container}>
-        <div className={classes.CourseTags}>
+        {/* <div className={classes.CourseTags}>
           <p>Artifical Intelligence</p>
-        </div>
+        </div> */}
         <h1 className={classes.CourseCard1Header}>{courseData.courseName}</h1>
         <div className={classes.CourseDetails}>
           <div className={classes.CourseUnits}>

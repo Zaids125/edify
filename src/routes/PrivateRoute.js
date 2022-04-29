@@ -7,6 +7,7 @@ import CourseEnroll from "../pages/CourseEnroll/CourseEnroll";
 import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 import Portfolio from "../pages/Portfolio/Portfolio";
 import Video from "../Component/VideoPlayer/VideoPlayer";
+import PortfolioPDF from "../Component/PortfolioPDF/PortfolioPDF";
 
 const PrivateRoutes = () => (
   <Switch>
@@ -31,9 +32,12 @@ const PrivateRoutes = () => (
     <Route path="/portfolio">
       <Portfolio />
     </Route>
+    <Route path="/print-portfolio">
+      <PortfolioPDF />
+    </Route>
     <Route path="/" exact>
-      {/* <Landing /> */}
-      <Redirect to="/portfolio" />
+      <Landing />
+      {/* <Redirect to="/portfolio" /> */}
     </Route>
     <Redirect to="/portfolio" />
   </Switch>

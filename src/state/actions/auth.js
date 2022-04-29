@@ -27,7 +27,6 @@ export const signup_start = (signUpData, history) => async (dispatch) => {
     const res = await axiosInstance.post("/auth/signUp", signUpData);
     console.log(res.data);
     dispatch({ type: "SIGNUP", payload: res.data });
-    dispatch({ type: "INFO", payload: { info: "Do Not Refresh this page" } });
     history.push("/courses");
   } catch (error) {
     dispatch({ type: "ERROR", payload: error.response.data });

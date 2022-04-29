@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../Imgs/Logo.png";
 import illust1 from "../../Imgs/Illust1.png";
 import icon from "../../Imgs/icon.png";
@@ -13,11 +13,25 @@ import Login from "../../Component/Login/Login";
 import CourseCard from "../../Component/CourseCard/CourseCard";
 import { useHistory } from "react-router-dom";
 import { Button } from "@mui/material";
+import axiosInstance from "../../adapters/api/axiosInstance";
+import { useSelector } from "react-redux";
 
 function Landing() {
   const [isSignOpen, setisSignOpen] = useState(false);
   const [isLogOpen, setisLogOpen] = useState(false);
   const history = useHistory();
+  const [allCourses, setAllCourses] = useState([]);
+
+  const authReducer = useSelector((state) => state.authReducer);
+
+  useEffect(() => {
+    const getAllCourses = async () => {
+      const res = await axiosInstance.get("/courses/all");
+      console.log(res.data);
+      setAllCourses(res.data.courses);
+    };
+    getAllCourses();
+  }, []);
 
   return (
     <div className={classes.landingBody}>
@@ -33,12 +47,21 @@ function Landing() {
           <p className={classes.caption}>
             Any language, on any device, for all ages!
           </p>
-          <Button
-            onClick={() => history.push("/signup")}
-            className={classes.btn}
-          >
-            Sign up for free
-          </Button>
+          {!authReducer.token ? (
+            <Button
+              onClick={() => history.push("/signup")}
+              className={classes.btn}
+            >
+              Sign up for free
+            </Button>
+          ) : (
+            <Button
+              onClick={() => history.push("/courses")}
+              className={classes.btn}
+            >
+              Explore Courses
+            </Button>
+          )}
         </div>
         <img src={illust1} alt="hello" />
       </div>
@@ -73,10 +96,9 @@ function Landing() {
       <div className={classes.section3}>
         <p>Trending Courses</p>
         <div className={classes.TredingCourseCards}>
-          {/* <CourseCard />
-          <CourseCard />
-          <CourseCard />
-          <CourseCard /> */}
+          {allCourses.map((data, index) => {
+            if (index < 4) return <CourseCard cardData={data} />;
+          })}
         </div>
       </div>
     </div>

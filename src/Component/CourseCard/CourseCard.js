@@ -22,7 +22,7 @@ function CourseCard({ cardData }) {
   return (
     <div className={classes.CourseCard}>
       <div className={classes.CourseCardContainer}>
-        <img src={courseImg} alt="" />
+        <img className={classes.cardImage} src={cardData.imageUrl} alt="" />
         <p className={classes.CourseCardName}>{cardData.courseName}</p>
         <div className={classes.CourseDetails}>
           <div className={classes.CourseDuration}>

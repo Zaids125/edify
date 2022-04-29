@@ -1,0 +1,253 @@
+.mainContainer{
+    position: absolute;
+    width: 612px;
+    height: 792px;
+    left: 380px;
+    top: 151px;
+    background: #F8F9FA;
+}
+
+.Block{
+    width: 612px;
+    height: auto;
+    background: #262C5B;
+    display:flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 612px;
+    height: auto;
+    left: 0px;
+    top: 16px;
+}
+
+.Block1{
+    color: white;
+    padding:24px ;
+}
+
+.Block1 .Tag{
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.14em;  
+    padding: 8px 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    margin: 0px;
+    color: #FFFFFF;
+     
+}
+
+.Name, .info{
+    margin-top: 16px;
+}
+
+.Block2{
+    color: white;
+    padding:24px ;
+}
+
+.Block2 .Tag{
+    border: 1px solid #262C5B;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+    color:white;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 32px;
+    letter-spacing: 0.14em;
+}
+
+
+.Block2 p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+}
+
+.leftContainer{
+    width: 60vw;
+
+}
+
+.divider{
+    background: #262C5B;
+    transform: rotate(-90deg);
+}
+
+.Internship{
+    position: absolute;
+    width: 320px;
+    height: 118px;
+    left: 36px;
+    top: 196px;
+    padding-top: 11px
+}
+
+.Projects{
+    position: absolute;
+    width: 320px;
+    height: 121px;
+    left: 36px;
+    top: 338px;
+    padding-top: 30px
+}
+
+.Certification{
+    position: absolute;
+    width: 320px;
+    height: 118px;
+    left: 36px;
+    top: 483px;
+    padding-top: 30px
+}
+
+.OtherDetails{
+    position: absolute;
+    width: 320px;
+    height: 149px;
+    left: 36px;
+    top: 625px;
+    padding-top: 30px
+}
+
+.leftContainer p{
+    margin: 0px;
+}
+
+.title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0.15em;
+}
+
+.subTitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+    padding-top: 14px;
+}
+
+.boldTitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+    color: #262C5B;
+    padding: 12px 0 12px 0;
+}
+
+.des{
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+}
+
+.divider{
+    position: absolute;
+    width: 600px;
+    height: 1px;
+    left: 80px;
+    top: 470px;
+    background: #262C5B;
+    transform: rotate(90deg)
+}
+
+.Education{
+    position: absolute;
+    width: 129px;
+    height: 26px;
+    left: 406px;
+    top: 196px;
+}
+
+.Skills{
+    position: absolute;
+    width: 171px;
+    height: 138px;
+    left: 406px;
+    top: 463px;
+}
+
+.tag{
+    color: #262C5B;
+    border: 1px solid #262C5B;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: 0.14em;
+    padding: 8px 32px;
+    font-size: 14px;
+}
+
+.skillName{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.14em;
+}
+
+.Year{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+}
+
+.SchoolName{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+    color:#262C5B
+}
+
+.Percent{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.14em;
+}

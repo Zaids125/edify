@@ -94,9 +94,9 @@ function Login() {
                 </InputAdornment>
               }
             />
-            <Link to="/forgotpassword" className={classes.ForgotPassword}>
+            {/* <Link to="/forgotpassword" className={classes.ForgotPassword}>
               Forgot password?
-            </Link>
+            </Link> */}
           </Box>
           <Button
             className={classes.LoginBtn}

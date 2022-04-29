@@ -25,9 +25,10 @@ import { Box } from "@mui/system";
 function Courses() {
   const [searchTerm, setSearchTerm] = useState("");
   const [allCourses, setAllCourses] = useState([]);
-  const [AISearch, setAISearch] = useState(true);
+  const [AISearch, setAISearch] = useState(false);
   const [loading, setLoading] = useState(false);
   const [skills, setSkills] = useState(["HTML", "CSS", "Data Science"]);
+
   const [selectedSkills, setSelectedSkills] = useState([]);
 
   useEffect(() => {
@@ -100,7 +101,9 @@ function Courses() {
     const res = await axiosInstance.get("/courses/getAICourses", {
       params: { selectedSkills, courseSelected: data.courseName },
     });
-    console.log(res.data);
+    console.log(res.data.allCourses);
+    setAllCourses(res.data.allCourses);
+    setAISearch(false);
   };
 
   return (

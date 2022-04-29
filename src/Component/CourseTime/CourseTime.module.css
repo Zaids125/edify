@@ -6,6 +6,7 @@
     border-radius: 10px;
     position: sticky;
     top: 120px;
+    z-index: 999;
 }
 
 .CourseTimeContainer {
