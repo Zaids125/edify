@@ -69,6 +69,7 @@ function MyCourses() {
                 return <MyCourseCard courseData={data} />;
               else if (!active && data.status === "Completed")
                 return <MyCourseCard courseData={data} />;
+              else return <p>No courses found</p>;
             })}
             {/* <MyCourseCard />
           <MyCourseCard />

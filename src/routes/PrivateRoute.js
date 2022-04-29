@@ -8,6 +8,7 @@ import CourseEnrolled from "../pages/CourseEnrolled/CourseEnrolled";
 import Portfolio from "../pages/Portfolio/Portfolio";
 import Video from "../Component/VideoPlayer/VideoPlayer";
 import PortfolioPDF from "../Component/PortfolioPDF/PortfolioPDF";
+import SideBar from "../Component/SideBar/SideBar";
 
 const PrivateRoutes = () => (
   <Switch>
@@ -36,7 +37,10 @@ const PrivateRoutes = () => (
       <PortfolioPDF />
     </Route>
     <Route path="/" exact>
-      <Landing />
+      <div style={{ display: "flex" }}>
+        <SideBar />
+        <Landing />
+      </div>
       {/* <Redirect to="/portfolio" /> */}
     </Route>
     <Redirect to="/portfolio" />

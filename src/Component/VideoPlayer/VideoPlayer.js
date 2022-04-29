@@ -86,10 +86,7 @@ function VideoPlayer({ courseData, markCompleted, setMarkCompleted }) {
         <div style={{ paddingTop: "32px" }}>
           <h3 style={{ color: "#262C5B" }}>Module Description </h3>
           <p style={{ paddingTop: "8px" }}>
-            Marketing is complex mechanism involving many people in one form or
-            the other. The major marketing functions are buying, selling,
-            financing, transport, warehousing, risk bearing and standardisation,
-            etc
+            {courseData.courseId.courseDescription}
           </p>
         </div>
         <div style={{ paddingTop: "40px" }}>
